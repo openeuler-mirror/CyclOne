@@ -1,0 +1,90 @@
+.app-header {
+  height: @HeaderH;
+  line-height: @HeaderH;
+  padding: 0;
+  overflow: hidden;
+  // background-color: @HeaderBackground;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  //box-shadow: 1px 0.1px 10px 1px @HeaderShadowBottom;
+  position: relative;
+  .app-header-btn {
+    width: 50px;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    // color: #f7fbff;
+    cursor: pointer;
+    padding-top: 2px;
+    .btn-circle {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto;
+      padding-left: 11px;
+      box-sizing: border-box;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 100%;
+      }
+      .icon-group1 {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        :before {
+          font-size: 20px !important;
+        }
+      }
+    }
+  }
+  .app-theme {
+    width: 46px;
+    height: 46px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 2px;
+    position: relative;
+    vertical-align: top;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .icon-painter-palette {
+      // color: #f7fbff;
+      position: absolute;
+      top: -2px;
+      left: 0;
+      left: 11px;
+    }
+  }
+  .app-header-left {
+    width: 200px;
+    // background-color: @HeaderBackground;
+    // box-shadow: 0.4px 0px 20px 1px @HeaderShadowLeft;
+    height: 100%;
+    .app-header-logo {
+      display: inline-block;
+      .logo {
+        vertical-align: top;
+        height: 38px;
+        margin-left: 60px;
+        margin-top: 6px;
+        //width: 120px;
+      }
+    }
+  }
+  .app-header-login {
+    position: absolute;
+    top: 0;
+    right: 32px;
+    font-size: 14px;
+    a {
+      color: #ebf1fa;
+    }
+  }
+}

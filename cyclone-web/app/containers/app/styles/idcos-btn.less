@@ -1,0 +1,96 @@
+.ant-btn-primary {
+  background-color: @BtnColor;
+  color: #fff !important;
+  &:hover {
+    background-color: @BtnHover;
+  }
+}
+.ant-radio-wrapper {
+  font-size: 14px;
+}
+.ant-btn-hover() {
+  color: @BtnColor;
+}
+.ant-btn {
+  color: @BtnNormalColor;
+  font-size: @baseFontSize;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400 !important;
+  &:hover:not(.ant-btn-primary) {
+    .ant-btn-hover;
+  }
+  &:focus {
+    .ant-btn-hover;
+  }
+}
+.ant-btn-danger {
+  color: #ff3700!important;
+}
+.ant-btn-danger:hover,
+.ant-btn-danger:focus,
+.ant-btn-danger:active
+{
+  color: #fff!important;
+  background-color: #f23400;
+  border-color: #f23400;
+}
+
+.ant-btn-primary.disabled,
+.ant-btn-primary[disabled],
+.ant-btn-primary.disabled:hover,
+.ant-btn-primary[disabled]:hover,
+.ant-btn-primary.disabled:focus,
+.ant-btn-primary[disabled]:focus,
+.ant-btn-primary.disabled:active,
+.ant-btn-primary[disabled]:active,
+.ant-btn-primary.disabled.active,
+.ant-btn-primary[disabled].active {
+  color: @BtnDisabledFont !important;
+  background-color: @BtnDisabledBg;
+  border-color: @BtnDisabledBorder;
+}
+
+.ant-btn.disabled,
+.ant-btn[disabled],
+.ant-btn.disabled:hover,
+.ant-btn[disabled]:hover,
+.ant-btn.disabled:focus,
+.ant-btn[disabled]:focus,
+.ant-btn.disabled:active,
+.ant-btn[disabled]:active,
+.ant-btn.disabled.active,
+.ant-btn[disabled].active {
+  color: @BtnDisabledFont !important;
+  background-color: @BtnDisabledBg;
+  border-color: @BtnDisabledBorder;
+}
+
+.ant-checkbox.ant-checkbox-disabled {
+  .ant-checkbox-inner {
+    color: @BtnDisabledFont !important;
+    background-color: @BtnDisabledBg;
+    border-color: @BtnDisabledBorder;
+    position: relative;
+  }
+}
+.ant-checkbox-checked .ant-checkbox-inner:after{
+  position: absolute;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  //left: 4.57142857px;
+  //top: 1.14285714px;
+  //display: table;
+  //width: 5.71428571px;
+  //height: 9.14285714px;
+  //border: 2px solid #fff;
+  //border-top: 0;
+  //border-left: 0;
+  //content: " ";
+  //-webkit-transition: all .1s cubic-bezier(.71, -.46, .88, .6);
+  //transition: all .1s cubic-bezier(.71, -.46, .88, .6);
+}
+.operate_btns{
+  margin-bottom: 8px;
+}

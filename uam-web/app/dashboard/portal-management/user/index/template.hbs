@@ -1,0 +1,288 @@
+<div class="inner-app">
+	<div class="inner-app__context-bar context-bar">
+		<span class="context-bar-nav-header">
+			<span class="context-bar__icon">
+				<i class="idcicon idcicon-usermanager"></i> 用户管理
+			</span>
+		</span>
+		<span class="total-icons">
+			<i class="point point-primary"></i> 用户信息
+		</span>
+		
+		<span class="context-bar__right-button-group pull-right">
+			<span class="input-group search">
+				{{input type="text"  value=filterString placeholder="请输入搜索内容"}}
+				{{io-icon type="search"}}
+			</span>
+
+			{{#if (permission-check model.permissions "user.create")}}
+			<button class="io-btn io-btn-primary" {{action "viewPersonModalWindow" 'add'}} data-dismiss="modal">{{io-icon type="plus"}} 新建用户</button>
+			{{/if}}
+		
+			{{#if (permission-check model.permissions "user.import")}}
+			{{#link-to "dashboard.portalManagement.user.import"}}
+		       <button class="io-btn io-btn-primary" data-dismiss="modal">
+	          	<i class="fa fa-upload"></i>导入用户
+	          </button>
+		    {{/link-to}}
+		    {{/if}}
+
+		    <!--<a href="/portal/user/list/download?deptId={{modal.deptID}}&tenantId={{modal.tenantId}}">-->
+		    {{#if (permission-check model.permissions "user.export")}}
+	          <button class="io-btn io-btn-primary" data-dismiss="modal" {{action 'downloadUser'}}>
+	          	<i class="fa fa-download"></i>导出用户
+	          </button>
+	        {{/if}}
+
+	    </span>
+
+		
+	</div>
+	<div class="inner-app__nav">
+		<div>
+			<span class="context-bar__icon">
+				<i class="idcicon idcicon-build"></i> 部门信息
+				{{#if (permission-check model.permissions "user.deptOperate")}}
+				<div style="float: right">
+					<i style="cursor: pointer" title="新增部门" {{action 'viewDeptModalWindow' 'add'}}>{{io-icon type="plus"}}</i>
+					<i style="cursor: pointer" title="修改部门" {{action 'viewDeptModalWindow' 'edit'}}>{{io-icon type="edit"}}</i>
+					<i style="cursor: pointer" title="删除部门" {{action 'deleteDept'}}>{{io-icon type="delete"}}</i>
+					<i style="cursor: pointer" title="为部门绑定角色" {{action 'viewDeptRoleModalWindow' 'edit'}}><i class="idcicon idcicon-rolemanager"></i></i>
+				</div>
+				{{/if}}
+			</span>
+		</div>
+		<hr>
+		{{#if (permission-check model.permissions "user.deptTree")}}
+			{{#if model.deptTree}}
+			{{io-tree
+				model=model.deptTree
+				selected=selected
+				treeNodeIcon='idcicon idcicon-build'
+				treeNodeTemplate='partial/tree-node-with-icon'
+				onSelectNode='onSelectedFolderNode'}}
+			{{/if}}
+		{{/if}}
+	</div>
+	<div class="inner-app__main icon-management">
+		<div class="row">
+			<div class="row">
+			{{#if loading}}
+				{{io-loading}}
+			{{else}}
+			{{#if (permission-check model.permissions "user.list")}}
+				{{#if model.columns}}
+					{{io-table
+					columns=model.columns
+					showIndexNumber=true
+					showGlobalFilter=false
+					indexNumberBase=model.indexNumber
+					allocateRole="editUserGroupAction"
+					allocateGroup = "editUserGroupAction"
+					viewPersonModalWindow = "viewPersonModalWindow"
+					delete = "deleteUser"
+					enabled = "enabledUser"
+					resetPW = "resetPW"
+					grantToken = "grantToken"
+					lookUpAction = "lookUpAction"
+					data=model.users}}
+				{{/if}}
+				{{#if model.paginationShow}}
+					<div class="row">
+						{{io-pagination change="pageClick" count=model.meta.pages current=model.meta.offset}}
+					</div>
+				{{/if}}
+			{{/if}}
+			{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{#io-modal show=openPersonModalWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closePersonModalWindow'}}>×</button>
+                <h4 class="modal-title">{{openPersonModalWindowTitle}}</h4>
+            </div>
+            {{#io-form-validator submitForm="saveUser"}}
+				<form class="form-horizontal">
+		            <div class="modal-body scroll-y" style="height: calc(100% - 200px);">
+		                 <div class="panel-body row"style="width:800px; margin:auto;">
+		                 		<div style="display: none">
+		                 			{{io-input value=editUser.id }}
+		                 		</div>
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="登录名：" }}
+		                        {{io-input value=editUser.loginId type="text" required=true data-error="请填写登录名" }}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="姓名：" }}
+		                        {{io-input value=editUser.name type="text" required=true data-error="请填写用户名称" }}
+		                        {{/io-form-group}}
+		                        {{#if model.isAdd}}
+			                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="密码："}}
+			                        {{io-input value=editUser.password type="password" required=true data-error="请输入密码"}}
+			                        注意：密码长度必须为8-16位，且必须包含大写字母、小写字母、数字和英文特殊字符！
+			                        {{/io-form-group}}
+			                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="确认密码："}}
+			                        {{io-input value=editUser.confirmPassword type="password" required=true data-error="请输入确认密码"}}
+			                        {{/io-form-group}}
+			                    {{else}}
+			                    	{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="状态："}}
+			                        {{io-input value=editUser.status type="status" readonly=true}}
+			                        {{/io-form-group}}
+		                        {{/if}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="部门：" }}
+		                        {{io-tree-select treeData=model.deptTree value=editUser.deptId }}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="职务："}}
+		                        {{io-input value=editUser.title type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="移动电话1："}}
+		                        {{io-input value=editUser.mobile1 type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="移动电话2："}}
+		                        {{io-input value=editUser.mobile2 type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="RTX："}}
+		                        {{io-input value=editUser.rtx type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="办公电话1："}}
+		                        {{io-input value=editUser.officeTel1 type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="办公电话2："}}
+		                        {{io-input value=editUser.officeTel2 type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="员工类型："}}
+		                        {{io-input value=editUser.employeeType type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="微信号："}}
+		                        {{io-input value=editUser.weixin type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="邮箱："}}
+		                        {{io-input value=editUser.email type="text" required=false}}
+		                        {{/io-form-group}}
+		                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="备注："}}
+		                        {{io-input value=editUser.remark type="text" required=false}}
+		                        {{/io-form-group}}
+		                    </div>
+		            </div>
+		            <div class="modal-footer">
+		            	<button  type="submit"  class="io-btn io-btn-primary"> {{io-icon type="save"}}保存</button>
+		                <button type="button" class="btn btn-default" {{action 'closePersonModalWindow'}}>关　闭</button>
+		            </div>
+            	</form>
+			{{/io-form-validator}}
+        </div>
+    </div>
+</div>
+{{/io-modal}}
+
+{{#io-modal show=openDeptModalWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closeDeptModalWindow'}}>×</button>
+                <h4 class="modal-title">{{openDeptModalWindowTitle}}</h4>
+            </div>
+            {{#io-form-validator submitForm="saveDept"}}
+				<form class="form-horizontal">
+		            <div class="modal-body scroll-y" style="height: calc(100% - 200px);">
+		            	<div style="display: none">
+                 			{{io-input value=editDept.id }}
+                 		</div>
+						{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="部门编码：" }}
+							{{io-input value=editDept.code type="text" required=true data-error="请填写部门编码"}}
+						{{/io-form-group}}
+                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="部门名称：" }}
+                        	{{io-input value=editDept.displayName type="text" required=true data-error="请填写部门名称" }}
+                        {{/io-form-group}}
+                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="父部门：" }}
+                        	{{io-tree-select treeData=model.deptTree value=editDept.parentId }}
+                        {{/io-form-group}}
+                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=false help="" label="描述信息：" }}
+                        	{{io-textarea value=editDept.remark placeholder=""}}
+                        {{/io-form-group}}
+		            </div>
+		            <div class="modal-footer">
+		            	<button  type="submit"  class="io-btn io-btn-primary"> {{io-icon type="save"}}保存</button>
+		                <button type="button" class="btn btn-default" {{action 'closeDeptModalWindow'}}>关　闭</button>
+		            </div>
+            	</form>
+			{{/io-form-validator}}
+        </div>
+    </div>
+</div>
+{{/io-modal}}
+
+{{#io-modal show=openDeptRoleWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closeDeptRoleModalWindow'}}>×</button>
+                <h4 class="modal-title">为部门绑定角色</h4>
+            </div>
+            {{#io-form-validator submitForm="saveDeptToRole"}}
+				<form class="form-horizontal">
+		            <div class="modal-body scroll-y" style="height: calc(100% - 200px);">
+		            	<div class="row padding0" style="padding: 30px; width: 770px; margin: auto;">
+						{{io-transfer
+						dataSource=allRoles
+						targetValues=selectedRoles}}
+						</div>
+		            </div>
+		            <div class="modal-footer">
+		            	<button  type="submit"  class="io-btn io-btn-primary"> {{io-icon type="save"}}保存</button>
+		                <button type="button" class="btn btn-default" {{action 'closeDeptRoleModalWindow'}}>关　闭</button>
+		            </div>
+            	</form>
+			{{/io-form-validator}}
+        </div>
+    </div>
+</div>
+{{/io-modal}}
+
+{{#io-modal show=openResetPasswordWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg" style="width:50%">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closeResetPasswordWindow'}}>×</button>
+                <h4 class="modal-title">重置密码</h4>
+            </div>
+            <div class="modal-body scroll-y" style="height: calc(100% - 200px);text-align:center;"  >
+            	<br/><br/>
+             	<h4 class="modal-title">用户密码重置成功，请发给用户登录验证。新密码为：</h4>
+             	<br/><br/>
+				<h3 class="modal-title">{{openNewPasswordContent}}</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" {{action 'closeResetPasswordWindow'}}>关　闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/io-modal}}
+
+{{#io-modal show=openGrantTokenWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg" style="width:50%">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closeGrantTokenWindow'}}>×</button>
+                <h4 class="modal-title">系统访问的Token（过期时间为：2049-10-01 15:00）</h4>
+            </div>
+            <div class="modal-body scroll-y" style="height: calc(100% - 200px);text-align:left;"  >
+             	<br/><br/>
+				<h3 class="modal-title">{{openGrantTokenContent}}</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" {{action 'closeGrantTokenWindow'}}>关　闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/io-modal}}

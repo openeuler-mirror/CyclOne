@@ -1,0 +1,100 @@
+<div class="inner-app">
+	<div class="col-md-24 inner-app__context-bar">
+		<span class="context-bar-nav-header no-shadow">
+			<span class="context-bar__icon">
+				<i class="idcicon idcicon-usergroup"></i> 租户管理
+			</span>
+		</span>
+		<span class="context-bar__right-button-group pull-right">
+			<span class="input-group search">
+				{{input type="text"  value=filterString placeholder="请输入搜索内容"}}
+				{{io-icon type="search"}}
+			</span>
+			<button class="io-btn io-btn-primary" {{action "viewModalWindow" "add"}} data-dismiss="modal">{{io-icon type="plus"}} 新建租户</button>
+		</span>
+	</div>
+
+	<div class="inner-app__main collapsed">
+		{{#if loading}}
+			{{io-loading}}
+		{{else}}
+			{{#if model.columns}}
+				{{io-table
+				columns=model.columns
+				showIndexNumber=true
+				showGlobalFilter=false
+				filterString=filterString
+				indexNumberBase=model.indexNumber
+				update="viewModalWindow"
+				delete="deleteTenant"
+				lookUpAction="viewInfoModalWindow"
+				data=model.data}}
+			{{/if}}
+			{{#if model.paginationShow}}
+				<div class="row">
+					{{io-pagination change="pageClick" count=model.meta.pages current=model.meta.offset}}
+				</div>
+			{{/if}}
+		{{/if}}
+	</div>
+</div>
+
+{{#io-modal show=openModalWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closeModalWindow'}}>×</button>
+                <h4 class="modal-title">{{openModalWindowTitle}}</h4>
+            </div>
+            {{#io-form-validator submitForm="saveTenant"}}
+				<form class="form-horizontal">
+		            <div class="modal-body scroll-y" style="height: calc(100% - 200px);">
+		            	<div style="display: none">
+                 			{{io-input value=editTenant.id }}
+                 		</div>
+                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="租户编码：" }}
+                        {{io-input value=editTenant.tenantId type="text" required=true data-error="请填写租户编码" }}
+                        {{/io-form-group}}
+                        {{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" required=true help="" label="租户名称：" }}
+                        {{io-input value=editTenant.tenantName type="text" required=true data-error="请填写租户名称" }}
+                        {{/io-form-group}}
+		            </div>
+		            <div class="modal-footer">
+		            	<button  type="submit"  class="io-btn io-btn-primary"> {{io-icon type="save"}}保存</button>
+		                <button type="button" class="btn btn-default" {{action 'closeModalWindow'}}>关　闭</button>
+		            </div>
+            	</form>
+			{{/io-form-validator}}
+        </div>
+    </div>
+</div>
+{{/io-modal}}
+
+{{#io-modal show=openInfoModalWindow}}
+<div class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" {{action 'closeInfoModalWindow'}}>×</button>
+                <h4 class="modal-title">{{openInfoModalWindowTitle}}</h4>
+            </div>
+				<form class="form-horizontal">
+					{{#io-form submitForm="saveResAction" class="panel form-horizontal" readonly=true}}
+		            <div class="modal-body scroll-y" style="height: auto;">
+		            	{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="租户编码：" }}
+						{{io-input value=infoTenant.tenantId type="text" data-error="" }}
+						{{/io-form-group}}
+						{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="租户名称：" }}
+						{{io-input value=infoTenant.tenantName type="text" data-error="" }}
+						{{/io-form-group}}
+		            </div>
+		            {{/io-form}}
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" {{action 'closeInfoModalWindow'}}>关　闭</button>
+		            </div>
+            	</form>
+        </div>
+    </div>
+</div>
+{{/io-modal}}

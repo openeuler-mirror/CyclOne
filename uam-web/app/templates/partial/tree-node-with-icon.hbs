@@ -1,0 +1,9 @@
+<span {{action 'select'}} class="{{nodeSelectedClasses}}">
+	{{!-- {{log model.icon}} --}}
+	{{#if model.icon}}
+		<i class={{model.icon}}></i>
+	{{else}}
+		<i class="{{tree.treeNodeIcon}}"></i>
+	{{/if}}
+    {{model.title}}
+</span>

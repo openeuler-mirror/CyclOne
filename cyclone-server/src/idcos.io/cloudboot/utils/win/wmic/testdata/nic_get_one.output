@@ -1,0 +1,4 @@
+C:\Users\Administrator>wmic nic where "PhysicalAdapter=TRUE" get MACAddress,NetConnectionID /format:csv
+
+Node,MACAddress,NetConnectionID
+WIN-C47GE2L79DO,08:00:27:FB:FC:47,以太网

@@ -1,0 +1,48 @@
+// mixins for clearfix
+// ------------------------
+.clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+
+.card-box(@padding: 20px) {
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid @border-color;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.22);
+  padding: @padding;
+  color: #868686;
+  position: relative; 
+  border-radius: 3px;
+  &:hover {
+    /* Rectangle 11: */
+    border: 1px solid #36A5FA;
+    box-shadow: 0px 0px 8px 0px #6ABEFF;
+    transition: all .1s ease-in-out;
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.abs() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

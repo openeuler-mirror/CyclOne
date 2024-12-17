@@ -1,0 +1,99 @@
+<div class="inner-app">
+	<div class="inner-app__context-bar context-bar">
+		<span class="context-bar-nav-header">
+			<span class="context-bar__icon">
+				<i class="idcicon idcicon-permissiondistribution"></i> 权限资源分配
+			</span>
+			<span class="context-bar-icon pull-right">
+				{{#io-select value=model.operId  width=90 required=true placeholder="请选择" }}
+				{{#each model.operSelect as |idc|}}
+				{{#io-option value=idc}}{{idc}}{{/io-option}}
+				{{/each}}
+				{{/io-select}}
+			</span>
+			
+		</span>
+		<span class="total-icons">
+			<i class="point point-primary"></i><i class="idcicon idcicon-permissionmanager"></i> 权限信息 (当前角色-{{model.roleName}})
+		</span>
+	</div>
+	<div class="inner-app__nav">
+		<div class="row">
+			<span class="context-bar__icon">
+				<i class="idcicon idcicon-rolemanager"></i> 角色信息
+			</span>
+			<hr>
+			{{#if model.roleData}}
+			{{io-tree
+			model=model.roleData
+			treeNodeIcon='idcicon idcicon-rolemanager'
+			treeNodeTemplate='partial/tree-node-with-icon'
+			selected=model.selectedRole
+			onSelectNode='selRoleAction'}}
+			{{/if}}
+		</div>
+	</div>
+	<div class="inner-app__main" style="padding: 20px;">
+		<div class="row inline-search">
+			<div style="display:inline-block;">
+				<label for="">系统名称：</label>
+				{{#io-select value=model.appId  required=true placeholder="请选择" width=150}}
+				{{#each model.appIdList as |idc|}}
+				{{#io-option value=idc}}{{idc}}{{/io-option}}
+				{{/each}}
+				{{/io-select}}
+			</div>
+			<div style="display:inline-block;margin-left:20px;">
+				<label for="">权限资源类型：</label>
+				{{#io-select value=model.resType  required=true placeholder="请选择" width=200}}
+				{{#each model.resTypeData as |idc|}}
+				{{#io-option value=idc.code}}{{idc.name}}{{/io-option}}
+				{{/each}}
+				{{/io-select}}
+			</div>
+		</div>
+		{{#if loading}}
+		{{io-loading}}
+		{{else}}
+		{{#if model.resTree}}
+		<br>
+		<div class="selectbox">
+			<div class="selectbox__menu col-sm-6">
+				{{io-tree
+				model=model.resTree
+				in-multi-selection=true
+				multi-selection=multi
+				selected=selected}}
+				{{!-- multi-selection=model.selRes --}}
+				
+			</div>
+			<div class="selectbox__content col-sm-18">
+				<div class="row">
+					<h3>已选择权限 -- {{model.selPerLength}}个：</h3>
+					<p>
+						{{#each model.selPers as | per|}}
+						<span class="io-tag">
+							{{#if per.title}}
+							<span class="io-tag-text">{{per.title}}</span>
+							{{else}}
+							<span class="io-tag-text">{{per.authResName}}</span>
+							{{/if}}
+							<i {{action "removePermission" per}} class="ioicon ioicon-cross"></i>
+						</span>
+						{{/each}}
+					</p>
+				</div>
+				<hr>
+				<div class="row selectbox__content__footer">
+					{{#io-button type="primary" onClick="savePermissionAction" class="pull-right"}} {{io-icon type="save"}}保存 {{/io-button}}
+				</div>
+			</div>
+		</div>
+		{{else}}
+		<p class="empty">
+			没有任何数据，请选择过滤条件
+		</p>
+		{{/if}}
+		{{/if}}
+	</div>
+</div>

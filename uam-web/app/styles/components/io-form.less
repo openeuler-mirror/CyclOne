@@ -1,0 +1,29 @@
+.form-group {
+	.form-control, 
+	.io-select, 
+	.io-input, 
+	.submit-button-wrapper{
+		width: 360px;
+		font-size: 12px;
+	}
+	.io-select-selection, 
+	.io-select-dropdown {
+		width: 100%;
+	}
+}
+
+.io-form {
+	&-readonly {
+		.form-group {
+			margin-bottom: 8px;
+			.io-select, 
+			.io-input {
+				font-weight: bold;
+				height: 32px;
+			}
+			.help-block {
+				display: none;
+			}
+		}
+	}
+}

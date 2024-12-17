@@ -1,0 +1,4 @@
+# clouduam
+src/main/webapp/WEB-INF/lib
+target/
+application-default.properties

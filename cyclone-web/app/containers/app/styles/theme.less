@@ -1,0 +1,140 @@
+// 把颜色有关的样式提取出来
+@darkFont: #dcdfee;
+.themeDefault {
+  .app-header {
+    background-color: @HeaderBackground;
+    //box-shadow: 1px 0.1px 10px 1px @HeaderShadowBottom;
+    .app-header-left {
+      background-color: @HeaderBackground;
+    }
+    .app-theme {
+      .icon-painter-palette {
+        color: #ebf1fa;
+      }
+    }
+    .app-header-btn {
+      color: #ebf1fa;
+    }
+    .anticon-user {
+      color: #ebf1fa;
+    }
+  }
+  .menu-show-hide-btn{
+    box-shadow: -1px 0px 1px 1px rgba(144, 146, 156, 0.4);
+    background-color: @NavbarBackground;
+  }
+  .app-body-nav {
+    background: @NavbarBackground;
+    .app-body-nav-btn {
+      border-top: 1px solid #30589e;
+      box-shadow: 0px 0px 0px 1px rgba(25,50,92,1);
+      background-color: @NavbarBackground;
+    }
+    .ant-menu-dark {
+      background: @NavbarBackground;
+    }
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+      background: @NavbarSubBackground;
+      span{
+        font-weight: normal!important;
+      }
+    }
+
+    // color
+    .ant-menu-submenu-open .ant-menu-sub .ant-menu-item a {
+      color: @NavFont;
+    }
+    .ant-menu-dark {
+      // background: @NavbarBackground;
+      height: ~"calc(100% - 50px)";
+      .ant-menu-item a {
+        color: @NavFont !important;
+      }
+      .ant-menu-item {
+        color: @NavFont;
+      }
+      .ant-menu-submenu-title {
+        color: @NavFont;
+      }
+      .ant-menu-submenu-inline .ant-menu-inline {
+        .ant-menu-item a {
+          color: @NavFontSub !important;
+        }
+      }
+    }
+    .ant-menu-inline .ant-menu-submenu-title {
+      a {
+        color: @NavFont;
+      }
+    }
+  }
+}
+
+.themeDark {
+  .app-header {
+    background-color: #2f2f4b;
+    box-shadow: 1px 0.1px 10px 1px rgba(144, 146, 156, 0.4);
+    .app-header-left {
+      background-color: #2f2f4b;
+    }
+    .app-theme {
+      .icon-painter-palette {
+        color: @darkFont;
+      }
+    }
+    .app-header-btn {
+      color: @darkFont;
+    }
+    .anticon-user {
+      color: @darkFont;
+    }
+  }
+  .menu-show-hide-btn{
+    box-shadow: -1px 0px 1px 1px rgba(144, 146, 156, 0.4);
+    background-color: #232639;
+  }
+  .app-body-nav {
+    background: #232639;
+    .app-body-nav-btn {
+      border-top: 1px solid #40486B;
+      box-shadow: 0px 0px 0px 1px #10131F;
+      background-color: #232639;
+    }
+    .ant-menu-dark {
+      background: #232639;
+    }
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+      background: #444B6D;
+      span{
+        font-weight: normal!important;
+      }
+    }
+
+    .ant-menu-submenu-open .ant-menu-sub .ant-menu-item a {
+      color: @darkFont;
+    }
+    .ant-menu-dark {
+      // background: @NavbarBackground;
+      height: ~"calc(100% - 50px)";
+      .ant-menu-item a {
+        color: @darkFont !important;
+      }
+      .ant-menu-item {
+        color: @darkFont;
+      }
+      .ant-menu-submenu-title {
+        color: @darkFont;
+      }
+      .ant-menu-submenu-inline .ant-menu-inline {
+        .ant-menu-item a {
+          color: @NavFontSub !important;
+        }
+      }
+    }
+    .ant-menu-inline .ant-menu-submenu-title {
+      a {
+        color: @darkFont;
+      }
+    }
+  }
+}

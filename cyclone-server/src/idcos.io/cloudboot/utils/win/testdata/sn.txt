@@ -1,0 +1,6 @@
+C:\Users\Administrator>wmic bios get SerialNumber /VALUE
+
+
+SerialNumber=0
+
+

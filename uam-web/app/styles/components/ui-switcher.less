@@ -1,0 +1,43 @@
+/**
+ * ui-switcher
+ */
+.ui-switcher {
+	background: @gray-d3;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	color: @gray-d5;
+	@radius: 5px;
+	@width: 47px;
+	@height: 24px;
+	&::after {
+	    font-family: "anticon" !important;
+	    font-style: normal;
+	    vertical-align: baseline;
+	    text-align: center;
+	    text-transform: none;
+	    text-rendering: auto;
+	    transition: transform .3s ease;
+	    content: "\e603";
+	    // right: 16px;
+	    position: relative;
+	    top: -3px;
+	    display: inline-block;
+	    font-weight: bold;
+	    font-size: 22px;
+	    transform: scale(0.66666667) rotate(180deg);
+	    zoom: 1;
+	}
+	&-top {
+		width: @width;
+		height: @height;
+		border-bottom-left-radius: @radius;
+		border-bottom-right-radius: @radius;
+		line-height: @height;
+		&.open {
+			&::after {
+				transform: rotate(180deg)
+			}
+		}
+	}
+}

@@ -1,0 +1,891 @@
+[
+  {
+    "category_code": "add_idcs",
+    "category_name": "新增数据中心",
+    "http_method": "Post",
+    "method": "GetIDCByID",
+    "url": "/api/cloudboot/v1/idcs"
+  },
+  {
+    "category_code": "mod_idcs",
+    "category_name": "修改数据中心",
+    "http_method": "Put",
+    "method": "GetIDCByID",
+    "url": "/api/cloudboot/v1/idcs/{id}"
+  },
+  {
+    "category_code": "mod_idcs_status",
+    "category_name": "修改数据中心状态",
+    "http_method": "Put",
+    "method": "",
+    "url": "/api/cloudboot/v1/idcs/status"
+  },
+  {
+    "category_code": "rm_idcs",
+    "category_name": "删除数据中心",
+    "http_method": "Delete",
+    "method": "GetIDCByID",
+    "url": "/api/cloudboot/v1/idcs/{id}"
+  },
+  {
+    "category_code": "add_server-rooms",
+    "category_name": "新增机房",
+    "http_method": "Post",
+    "method": "GetServerRoomByID",
+    "url": "/api/cloudboot/v1/server-rooms"
+  },
+  {
+    "category_code": "mod_server-rooms",
+    "category_name": "修改机房",
+    "http_method": "Put",
+    "method": "GetServerRoomByID",
+    "url": "/api/cloudboot/v1/server-rooms/{id}"
+  },
+  {
+    "category_code": "mod_server-rooms_status",
+    "category_name": "修改机房状态",
+    "http_method": "Put",
+    "method": "",
+    "url": "/api/cloudboot/v1/server-rooms/status"
+  },
+  {
+    "category_code": "rm_server-rooms",
+    "category_name": "删除机房",
+    "http_method": "Delete",
+    "method": "GetServerRoomByID",
+    "url": "/api/cloudboot/v1/server-rooms/{id}"
+  },
+  {
+    "category_code": "add_server-rooms",
+    "category_name": "加载导入机房文件",
+    "http_method": "Post",
+    "method": "GetServerRoomByID",
+    "url": "/api/cloudboot/v1/server-rooms/upload"
+  },
+  {
+    "category_code": "add_server-rooms",
+    "category_name": "导入机房文件预览",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-rooms/imports/previews"
+  },
+  {
+    "category_code": "import_server-rooms",
+    "category_name": "导入机房文件",
+    "http_method": "Post",
+    "method": "GetServerRoomByID",
+    "url": "/api/cloudboot/v1/server-rooms/imports"
+  },
+  {
+    "category_code": "add_network-areas",
+    "category_name": "新增网络区域",
+    "http_method": "Post",
+    "method": "GetNetworkAreaByID",
+    "url": "/api/cloudboot/v1/network-areas"
+  },
+  {
+    "category_code": "mod_network-areas",
+    "category_name": "修改网络区域",
+    "http_method": "Put",
+    "method": "GetNetworkAreaByID",
+    "url": "/api/cloudboot/v1/network-areas/{id}"
+  },
+  {
+    "category_code": "mod_network-areas_status",
+    "category_name": "修改网络区域状态",
+    "http_method": "Put",
+    "method": "",
+    "url": "/api/cloudboot/v1/network-areas/status"
+  },
+  {
+    "category_code": "rm_network-areas",
+    "category_name": "删除网络区域",
+    "http_method": "Delete",
+    "method": "GetNetworkAreaByID",
+    "url": "/api/cloudboot/v1/network-areas/{id}"
+  },
+  {
+    "category_code": "add_network-areas",
+    "category_name": "加载导入导入网络区域文件",
+    "http_method": "Post",
+    "method": "GetNetworkAreaByID",
+    "url": "/api/cloudboot/v1/network-areas/upload"
+  },
+  {
+    "category_code": "add_network-areas",
+    "category_name": "导入网络区域文件预览",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/network-areas/imports/previews"
+  },
+  {
+    "category_code": "add_network-areas",
+    "category_name": "导入网络区域文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/network-areas/imports"
+  },
+  {
+    "category_code": "add_server-cabinets",
+    "category_name": "新增机架(柜)",
+    "http_method": "Post",
+    "method": "GetServerCabinetByID",
+    "url": "/api/cloudboot/v1/server-cabinets"
+  },
+  {
+    "category_code": "mod_server-cabinets",
+    "category_name": "修改机架(柜)",
+    "http_method": "Put",
+    "method": "GetServerCabinetByID",
+    "url": "/api/cloudboot/v1/server-cabinets/{id}"
+  },
+  {
+    "category_code": "add_server-cabinets_status",
+    "category_name": "修改机架(柜)状态",
+    "http_method": "Put",
+    "method": "",
+    "url": "/api/cloudboot/v1/server-cabinets/status"
+  },
+  {
+    "category_code": "rm_server-cabinets",
+    "category_name": "删除机架(柜)",
+    "http_method": "Delete",
+    "method": "GetServerCabinetByID",
+    "url": "/api/cloudboot/v1/server-cabinets/{id}"
+  },
+  {
+    "category_code": "power_on_server-cabinets",
+    "category_name": "机架开电",
+    "http_method": "Post",
+    "method": "GetServerCabinetByID",
+    "url": "/api/cloudboot/v1/server-cabinets/{id}/power"
+  },
+  {
+    "category_code": "power_off_server-cabinets",
+    "category_name": "机架关电",
+    "http_method": "Delete",
+    "method": "GetServerCabinetByID",
+    "url": "/api/cloudboot/v1/server-cabinets/{id}/power"
+  },
+  {
+    "category_code": "add_server-cabinets",
+    "category_name": "加载导入机架(柜)文件",
+    "http_method": "Post",
+    "method": "GetServerCabinetByID",
+    "url": "/api/cloudboot/v1/server-cabinets/upload"
+  },
+  {
+    "category_code": "add_server-cabinets",
+    "category_name": "导入机架(柜)文件预览",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-cabinets/imports/previews"
+  },
+  {
+    "category_code": "add_server-cabinets",
+    "category_name": "导入机架(柜)文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-cabinets/imports"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "新增机位(U位)",
+    "http_method": "Post",
+    "method": "GetServerUSiteByID",
+    "url": "/api/cloudboot/v1/server-usites"
+  },
+  {
+    "category_code": "mod_server-usites",
+    "category_name": "修改机位(U位)",
+    "http_method": "Put",
+    "method": "GetServerUSiteByID",
+    "url": "/api/cloudboot/v1/server-usites/{id}"
+  },
+  {
+    "category_code": "rm_server-usites",
+    "category_name": "删除机位(U位)",
+    "http_method": "Delete",
+    "method": "GetServerUSiteByID",
+    "url": "/api/cloudboot/v1/server-usites/{id}"
+  },
+  {
+    "category_code": "rm_server-usites_ports",
+    "category_name": "删除机位(U位)端口号",
+    "http_method": "Delete",
+    "method": "GetServerUSiteByID",
+    "url": "/api/cloudboot/v1/server-usites/{id}/ports"
+  },
+  {
+    "category_code": "mod_server-usites",
+    "category_name": "修改机位(U位)状态",
+    "http_method": "Put",
+    "method": "GetServerUSiteByID",
+    "url": "/api/cloudboot/v1/server-usites/status"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "加载导入机位(U位)文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-usites/upload"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "导入机位(U位)文件预览",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-usites/imports/previews"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "导入机位(U位)文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-usites/imports"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "加载导入机位(U位)端口号文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-usites/ports/upload"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "导入机位(U位)端口号文件预览",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-usites/ports/imports/previews"
+  },
+  {
+    "category_code": "add_server-usites",
+    "category_name": "导入机位(U位)端口号文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/server-usites/ports/imports"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "新增物理机",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/collections"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "加载导入物理机文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/upload"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "导入物理机文件预览",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/imports/previews"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "加入物理机文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/imports"
+  },
+  {
+    "category_code": "mod_device",
+    "category_name": "修改物理机",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/device"
+  },
+  {
+    "category_code": "mod_device",
+    "category_name": "批量修改物理机状态/用途",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/devices"
+  },
+  {
+    "category_code": "rm_devices",
+    "category_name": "删除物理机",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/devices"
+  },
+  {
+    "category_code": "add_ip-networks",
+    "category_name": "新增网段",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/ip-networks"
+  },
+  {
+    "category_code": "add_ip-networks",
+    "category_name": "修改网段",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/ip-networks/{id}"
+  },
+  {
+    "category_code": "rm_ip-networks",
+    "category_name": "删除网段",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/ip-networks/{id}"
+  },
+  {
+    "category_code": "sync_ip-networks",
+    "category_name": "网段同步",
+    "http_method": "Post",
+    "method": "",
+    "url": "/api/cloudboot/v1/ip-networks/sync"
+  },
+  {
+    "category_code": "mod_ips",
+    "category_name": "手动分配IP",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/ips/assigns"
+  },
+  {
+    "category_code": "mod_ips",
+    "category_name": " 手动取消IP分配",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/ips/unassigns"
+  },
+  {
+    "category_code": "rm_network-device",
+    "category_name": "删除网络设备",
+    "http_method": "Delete",
+    "method": "GetNetworkDeviceByID",
+    "url": "/api/cloudboot/v1/network/devices/{id}"
+  },
+  {
+    "category_code": "add_network-device",
+    "category_name": "新增网络设备",
+    "http_method": "Post",
+    "method": "GetNetworkDeviceByID",
+    "url": "/api/cloudboot/v1/network/devices"
+  },
+  {
+    "category_code": "sync_network-device",
+    "category_name": "网段设备同步",
+    "http_method": "Post",
+    "method": "",
+    "url": "/api/cloudboot/v1/network/devices/sync"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "上报安装进度",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/installations/progress"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "新增装机参数",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/settings"
+  },
+  {
+    "category_code": "mod_devices",
+    "category_name": "批量重装设备",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/devices/installations/reinstalls"
+  },
+  {
+    "category_code": "mod_devices",
+    "category_name": "设备重装",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/installations/os-reinstallations"
+  },  
+  {
+    "category_code": "mod_devices",
+    "category_name": "批量取消安装设备",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/devices/installations/cancels"
+  },
+  {
+    "category_code": "rm_devices",
+    "category_name": "批量删除设备装机参数",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/devices/settings"
+  },
+  {
+    "category_code": "rm_hardware-templates",
+    "category_name": "删除硬件模板",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/hardware-templates/{id}"
+  },
+  {
+    "category_code": "mod_hardware-templates",
+    "category_name": "修改硬件模板",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/hardware-templates/{id}"
+  },
+  {
+    "category_code": "add_hardware-templates",
+    "category_name": "新增硬件模板",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/hardware-templates"
+  },
+  {
+    "category_code": "add_image-templates",
+    "category_name": "新增镜像模板",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/image-templates"
+  },
+  {
+    "category_code": "mod_image-templates",
+    "category_name": "修改镜像模板",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/image-templates/{id}"
+  },
+  {
+    "category_code": "rm_image-templates",
+    "category_name": "删除镜像模板",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/image-templates/{id}"
+  },
+  {
+    "category_code": "add_system-templates",
+    "category_name": "新增系统模板",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/system-templates"
+  },
+  {
+    "category_code": "mod_system-templates",
+    "category_name": "修改系统模板",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/system-templates/{id}"
+  },
+  {
+    "category_code": "rm_system-templates",
+    "category_name": "删除系统模板",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/system-templates/{id}"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "新增带外管理",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/power"
+  },
+  {
+    "category_code": "add_devices",
+    "category_name": "带外管理批量PXE重启",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/devices/power/pxe/restart"
+  },
+  {
+    "category_code": "mod_devices",
+    "category_name": "带外管理批量重启",
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/devices/power/restart"
+  },
+  {
+    "category_code": "rm_devices",
+    "category_name": "带外管理批量关机",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/devices/power"
+  },
+  {
+    "category_code": "mod_devices",
+    "category_name": "修改带外用户密码",
+    "http_method": "Put",
+    "req_param_desensitization": "oob_password_old,oob_password_new",
+    "url": "/api/cloudboot/v1/devices/{sn}/oob/password"
+  },
+  {
+    "category_code": "add_jobs",
+    "category_name": "新增巡检任务",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/jobs/inspections"
+  },
+  {
+    "category_code": "mod_user_password",
+    "category_name": "修改用户密码",
+    "http_method": "Put",
+    "req_param_desensitization": "old_password,new_password",
+    "url": "/api/cloudboot/v1/users/password"
+  },
+  {
+    "category_code": "mod_gen_pxe",
+    "category_name": "为目标设备生成PXE文件",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/pxe"
+  },
+  {
+    "category_code": "mod_centos6_uefi_pxe",
+    "category_name": "生成centos6 pxe模板",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/centos6/uefi/pxe"
+  },
+  {
+    "category_code": "submit_cabinet_offline_approval",
+    "category_name": "发起机架下线审批",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/server-cabinets/offlines"
+  },
+  {
+    "category_code": "submit_cabinet_poweroff_approval",
+    "category_name": "发起机架关电审批",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/server-cabinets/poweroffs"
+  },
+  {
+    "category_code": "submit_device_migrate_approval",
+    "category_name": "发起物理机迁移审批",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/migrations"
+  },
+  {
+    "category_code": "submit_device_retire_approval",
+    "category_name": "发起物理机退役审批",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/retirements"
+  },
+  {
+    "category_code": "submit_device_reinstall_approval",
+    "category_name": "发起物理机重装审批",
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/os-reinstallations"
+  },
+  {
+    "category_code": "return_limiter_token",
+    "category_name": "归还设备持有的DHCP IP令牌",
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/devices/{sn}/limiters/tokens"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/store/upload",
+    "category_code": "upload",
+    "category_name": "上传设备导入到库房文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/store/imports/previews",
+    "category_code": "add_devices",
+    "category_name": "物理机导入到库房预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/store/imports",
+    "category_code": "add_devices",
+    "category_name": "物理机导入到库房"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/stock/upload",
+    "category_code": "add_devices",
+    "category_name": "上传存量设备文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/stock/imports/previews",
+    "category_code": "add_devices",
+    "category_name": "存量设备导入预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/stock/imports",
+    "category_code": "add_devices",
+    "category_name": "存量设备导入"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/device/operation/status",
+    "category_code": "mod_device",
+    "category_name": "修改设备运营状态"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/migrations/upload",
+    "category_code": "add_approvals",
+    "category_name": "上传物理机搬迁文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/migrations/imports/previews",
+    "category_code": "add_approvals",
+    "category_name": "物理机搬迁导入预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/migrations/imports",
+    "category_code": "add_approvals",
+    "category_name": "物理机搬迁导入"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/idc/abolish",
+    "category_code": "add_approvals",
+    "category_name": "数据中心裁撤审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/server-room/abolish",
+    "category_code": "add_approvals",
+    "category_name": "机房裁撤审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/network-area/offline",
+    "category_code": "add_approvals",
+    "category_name": "网络区域下线审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/ip/unassign",
+    "category_code": "add_approvals",
+    "category_name": "IP回收审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/device/poweroff",
+    "category_code": "add_approvals",
+    "category_name": "物理机关电审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/device/restart",
+    "category_code": "add_approvals",
+    "category_name": "物理机重启审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/approvals/devices/recycle",
+    "category_code": "add_approvals",
+    "category_name": "物理机回收审批"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/store-room",
+    "category_code": "add_store-room",
+    "category_name": "新增库房"
+  },
+  {
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/store-room/{id}",
+    "category_code": "rm_store-room",
+    "category_name": "删除库房"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/store-room",
+    "category_code": "mod_store-room",
+    "category_name": "修改库房"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/store-room/upload",
+    "category_code": "add_store-room",
+    "category_name": "上传库房导入文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/store-room/imports/previews",
+    "category_code": "add_store-room",
+    "category_name": "库房导入预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/store-room/imports",
+    "category_code": "add_store-room",
+    "category_name": "库房导入"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/virtual-cabinet",
+    "category_code": "add_virtual-cabinet",
+    "category_name": "新增虚拟货架"
+  },
+  {
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/virtual-cabinet/{id}",
+    "category_code": "rm_virtual-cabinet",
+    "category_name": "删除虚拟货架"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/network/devices/upload",
+    "category_code": "add_network",
+    "category_name": "上传网络设备导入文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/network/devices/imports/previews",
+    "category_code": "add_network",
+    "category_name": "网络设备导入预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/network/devices/imports",
+    "category_code": "add_network",
+    "category_name": "网络设备导入"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/ip-networks/upload",
+    "category_code": "add_ip-networks",
+    "category_name": "上传网段导入文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/ip-networks/imports/previews",
+    "category_code": "add_ip-networks",
+    "category_name": "网段导入预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/ip-networks/imports",
+    "category_code": "add_ip-networks",
+    "category_name": "网段导入"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/ips/status/disable",
+    "category_code": "mod_ips",
+    "category_name": "禁用IP"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/special-device",
+    "category_code": "add_special-device",
+    "category_name": "新增特殊设备"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/special-devices/upload",
+    "category_code": "add_special-devices",
+    "category_name": "上传特殊设备导入文件"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/special-devices/imports/previews",
+    "category_code": "add_special-devices",
+    "category_name": "特殊设备导入预览"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/special-devices/imports",
+    "category_code": "add_special-devices",
+    "category_name": "特殊设备导入"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/devices/oob/re-access",
+    "category_code": "mod_devices",
+    "category_name": "重新纳管带外"
+  },
+  {
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/devices/limiters/tokens",
+    "category_code": "rm_devices",
+    "category_name": "一键释放token"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/components/hw-server/logs",
+    "category_code": "add_devices",
+    "category_name": "保存hw-server组件日志"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/components/peconfig/logs",
+    "category_code": "add_devices",
+    "category_name": "保存peconfig组件日志"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/components/cloudboot-agent/logs",
+    "category_code": "add_devices",
+    "category_name": "保存cloudboot-agent组件日志"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/components/winconfig/logs",
+    "category_code": "add_devices",
+    "category_name": "保存winconfig组件日志"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/components/network-config/logs",
+    "category_code": "add_devices",
+    "category_name": "保存系统配置日志"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/devices/{sn}/components/image-clone/logs",
+    "category_code": "add_devices",
+    "category_name": "保存镜像制作日志"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/order",
+    "category_code": "add_order",
+    "category_name": "新增订单"
+  },
+  {
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/orders",
+    "category_code": "rm_orders",
+    "category_name": "删除订单"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/order",
+    "category_code": "mod_order",
+    "category_name": "修改订单"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/order/status",
+    "category_code": "mod_order",
+    "category_name": "修改订单状态"
+  },
+  {
+    "http_method": "Post",
+    "url": "/api/cloudboot/v1/device-category",
+    "category_code": "add_device-category",
+    "category_name": "新增设备类型"
+  },
+  {
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/device-categories",
+    "category_code": "rm_device-categories",
+    "category_name": "删除设备类型"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/device-category",
+    "category_code": "mod_device-category",
+    "category_name": "修改设备类型"
+  },
+  {
+    "http_method": "Delete",
+    "url": "/api/cloudboot/v1/jobs/{job_id}",
+    "category_code": "rm_jobs",
+    "category_name": "删除任务"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/jobs/{job_id}/pausing",
+    "category_code": "mod_jobs",
+    "category_name": "暂停任务"
+  },
+  {
+    "http_method": "Put",
+    "url": "/api/cloudboot/v1/jobs/{job_id}/unpausing",
+    "category_code": "mod_jobs",
+    "category_name": "继续已暂停任务"
+  },
+  {
+    "http_method": "Post",
+    "method":"",
+    "url": "/api/cloudboot/v1/device-setting-rules",
+    "category_code": "add_device-setting-rules",
+    "category_name": "新增装机参数规则"
+  },
+  {
+    "http_method": "Delete",
+    "method":"",
+    "url": "/api/cloudboot/v1/device-setting-rules",
+    "category_code": "rm_device-setting-rules",
+    "category_name": "删除装机参数规则"
+  },
+  {
+    "http_method": "Put",
+    "method":"",
+    "url": "/api/cloudboot/v1/device-setting-rules",
+    "category_code": "mod_device-setting-rules",
+    "category_name": "修改装机参数规则"
+  },
+  {
+    "category_code": "mod_devices",
+    "category_name": "自动重装设备",
+    "http_method": "Put",
+    "method":"",
+    "url": "/api/cloudboot/v1/devices/installations/autoreinstalls"
+  }
+]

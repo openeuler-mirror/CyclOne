@@ -1,0 +1,42 @@
+.app-header {
+	height: 51px;
+	line-height: 51px;
+	background-color: @brand-background-color-d3;
+	color: white;
+	&__logo {
+		width: 270px;
+		margin-right: 30px;
+		margin-left: 18px;
+		a{
+			display: inline-block;
+			width: 168px;
+			height: 42px;
+			vertical-align: middle;
+			img {
+				vertical-align: top;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		
+	}
+	&__user {
+		margin-left: 15px;
+		margin-right: 20px;
+		color: @brand-font-color-d1;
+		img {
+			height: 36px;
+			width: 36px;
+			margin-right: 20px;
+		}
+		.io-dropdown .io-dropdown-overlay {
+			right: 0;
+			left: auto;
+			top: 20px;
+			transition: all .2s ease-in-out;
+		}
+	}
+	.io-dropdown-trigger {
+		color: #757984;
+	}
+}

@@ -1,0 +1,12 @@
+{{#tool-tips type="bottom" tip="分配权限"}}
+<span {{action 'sendAction' 'allocateGroup' "PERMISSION" record}}  class="h4 text-primary" ><i class="idcicon idcicon-permissiondistribution"></i></span>
+{{/tool-tips}}
+{{#tool-tips type="bottom" tip="分配用户组"}}
+<span {{action 'sendAction' 'allocateGroup' "GROUP" record}}  class="h4 text-primary" ><i class="idcicon idcicon-usergroup"></i></span>
+{{/tool-tips}}
+{{#tool-tips type="bottom" tip="编辑"}}
+<span {{action 'sendAction' 'update' "INFO" record}}  class="h4 text-primary" >{{io-icon type="edit"}}</span>
+{{/tool-tips}}
+{{#tool-tips type="bottom" tip="删除"}}
+<span {{action 'sendAction' 'delete' record}}  class="h4 text-danger" >{{io-icon type="delete"}}</span>
+{{/tool-tips}}

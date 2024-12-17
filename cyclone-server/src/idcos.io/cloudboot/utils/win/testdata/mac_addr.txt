@@ -1,0 +1,5 @@
+C:\Users\Administrator>wmic nic where "NetConnectionStatus=2" get MACAddress /VALUE
+
+MACAddress=08:00:27:FB:FC:47
+
+

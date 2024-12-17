@@ -1,0 +1,19 @@
+{
+    "version": "0.6.0",
+    "tool": "go install -v -ldflags '-s -w'",
+    "importpath": "idcos.io/cloudboot/build",
+    "variables": [
+        {
+            "variable": "Date",
+            "value": "{{.Date}}"
+        },
+        {
+            "variable": "Commit",
+            "value": "{{.GitCommit}}"
+        },
+        {
+            "variable": "Branch",
+            "value": "$(git symbolic-ref --short -q HEAD)"
+        }
+    ]
+}

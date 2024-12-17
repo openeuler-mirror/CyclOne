@@ -1,0 +1,65 @@
+.app-body__menu {
+	background: @brand-background-color-d2;
+	padding-top: 18px;
+	.io-menu {
+	    outline: 0;
+	    margin-bottom: 0;
+	    padding-left: 0;
+	    list-style: none;
+	    z-index: 999;
+	    box-shadow: 0 0 4px rgba(0, 0, 0, .17);
+	    color: #FFF;
+	    background: #2E323E;
+	    line-height: 46px;
+	    box-shadow: none;
+		.io-menu-item {
+			.ioicon, 
+			.idcicon {
+			    margin-right: 5px;
+			    font-size: 18px;
+			    vertical-align: middle;
+			}
+
+		    > a {
+			    color: @brand-font-color;
+			    font-size: 14px;
+			    text-decoration: none;
+			}
+			&:hover, &-selected, &-active{
+				color: white;
+				>a {
+					color: white;
+				}
+			}
+		}
+	}
+
+	.io-menu-submenu-open .io-menu-inline .io-menu-item {
+	    background: #282B35;
+	}
+
+	.io-menu-submenu-open .io-menu-inline .io-menu-item:hover {
+	    background: #202027;
+	}
+	
+
+	.io-menu-item-selected, 
+	.io-menu-item-active:hover, 
+	.io-menu-item-active:visited,
+	.io-menu-submenu-active .io-menu-submenu-title:hover {
+	    padding-left: 44px !important;
+	    background: #202027;
+	    color: #FFF;
+	}
+	.io-menu-inline, .io-menu-vertical {
+	    border: 0;
+	}
+	.io-menu-submenu-title {
+	    -webkit-transition: padding-left 1s ease;
+	    transition: padding-left 1s ease;
+	}
+
+	.io-menu-item-active, .io-menu-submenu-title:hover {
+	    background-color: #2E323E;
+	}
+}

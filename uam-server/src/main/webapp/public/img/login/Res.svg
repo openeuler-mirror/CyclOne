@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="59px" height="57px" viewBox="0 0 59 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="95.617643%" y1="30.8807958%" x2="6.4312356%" y2="73.4870905%" id="linearGradient-1">
+            <stop stop-color="#FFF082" offset="0%"></stop>
+            <stop stop-color="#009EFD" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0.980540852,0.0283885714 C0.742671738,0.0283885714 0.523159082,0.152557714 0.406136656,0.353499429 C-0.224611672,1.43670857 0.583582426,2.77640229 1.86802466,2.77640229 L8.60433521,2.77640229 L8.97528866,2.77640229 C9.33578911,2.77640229 9.69552472,2.82577371 10.0374138,2.93636571 C11.0120908,3.25135543 12.5032981,4.05216 11.8134012,5.87643429 C11.2917718,7.25537829 9.97775528,8.038656 7.8708417,8.22552686 C7.46903921,8.26132114 7.20975423,8.65431771 7.34997718,9.02065371 L9.38117036,14.321664 C9.73810151,15.2525623 10.8254668,15.7065326 11.7692947,15.3179794 L12.923967,14.8432731 C13.2638164,14.7033051 13.4236706,14.3243794 13.2819179,13.9940846 L11.7759234,10.4859977 C11.6701188,10.2396343 11.7458392,9.95278629 11.964842,9.79109486 C14.1604784,8.17072457 15.3398809,6.51554743 15.5033044,4.82556343 C15.6603541,3.200256 14.8595536,1.72775314 13.1003929,0.408301714 C12.7676821,0.158729143 12.3544068,0.0283885714 11.933483,0.0283885714 L0.980540852,0.0283885714 Z" id="path-2"></path>
+        <path d="M4.911616,0.0441 C4.127744,0.0441 3.438336,0.552888 3.218432,1.293264 L0.230656,11.355372 C0.12288,11.718252 0.39936,12.081132 0.783104,12.081132 L2.23872,12.081132 C2.95296,12.081132 3.581184,11.616696 3.780608,10.94184 L6.7648,0.848232 C6.883584,0.44604 6.577152,0.0441 6.15168,0.0441 L4.911616,0.0441 Z" id="path-4"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="方案一" transform="translate(-884.000000, -238.000000)">
+            <g id="Group" transform="translate(884.000000, 238.000000)">
+                <g id="Group-9-Copy">
+                    <g id="Group-18" transform="translate(0.000000, 37.600000)">
+                        <text id="混合云管理平台" font-family="PingFangSC-Medium, PingFang SC" font-size="8.39808" font-weight="400" fill="#213056">
+                            <tspan x="0" y="18.09792">混合云管理平台</tspan>
+                        </text>
+                        <text id="Cloud-Res" font-family="Arial-BoldMT, Arial" font-size="9.79776" font-weight="bold" fill="#212F54">
+                            <tspan x="0" y="9">Cloud Res</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-57" transform="translate(12.800000, 0.000000)">
+                        <g id="Group-34-Copy" fill="url(#linearGradient-1)">
+                            <circle id="Oval-3" cx="16.416" cy="16.416" r="16.416"></circle>
+                        </g>
+                        <g id="Page-1" transform="translate(7.776000, 8.640000)">
+                            <g id="Group-3" transform="translate(0.864000, 0.000000)">
+                                <mask id="mask-3" fill="white">
+                                    <use xlink:href="#path-2"></use>
+                                </mask>
+                                <g id="Clip-2"></g>
+                                <polygon id="Fill-1" fill="#FEFEFE" mask="url(#mask-3)" points="-5.35396721 20.2422857 19.8718867 20.2422857 19.8718867 -4.18274743 -5.35396721 -4.18274743"></polygon>
+                            </g>
+                            <g id="Group-6" transform="translate(0.000000, 4.320000)">
+                                <mask id="mask-5" fill="white">
+                                    <use xlink:href="#path-4"></use>
+                                </mask>
+                                <g id="Clip-5"></g>
+                                <polygon id="Fill-4" fill="#FEFEFE" mask="url(#mask-5)" points="-4.352 16.38 11.369728 16.38 11.369728 -4.25502 -4.352 -4.25502"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

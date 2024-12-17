@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="update pkg version" default="create-version" basedir="..">
+
+   <!-- 基本信息 -->
+  <property name="package.name.prefix" value="cloud-davinci-web" />
+  <property name="package.description" value="自动化管理平台UI" />
+  <property name="api.service.url" value="http://localhost:8080" />
+
+
+  <property name="package.user" value="root" />
+  <property name="package.userGroup" value="root" />
+
+  <property name="package.type" value="RPM" />
+  <property name="package.application" value="APP" />
+  <property name="package.release" value="1" />
+  <property name="package.platCode" value="x86_64" />
+  <property name="package.osName" value="CentOS" />
+  <property name="package.osVersion" value="7.1" />
+  <property name="install.dir" value="/usr/yunji" /> 
+  <property name="package.service.url" value="http://${package.server}:8080/pkg/packFile/createVersion" />
+
+  <!-- 有依赖顺序，这里只能放在后面 -->
+  <property name="package.name" value="${package.name.prefix}${branch}" />
+  <property name="app.dir" value="${install.dir}/${package.name}" />
+
+
+
+  <echo message ="package.name         =     ${package.name}" />
+  <echo message ="package.description  =     ${package.description}" />
+  <echo message ="package.type         =     ${package.type}" />
+  <echo message ="package.application  =     ${package.application}" />
+  <echo message ="package.release      =     ${package.release}" />
+  <echo message ="package.platCode     =     ${package.platCode}" />
+  <echo message ="package.osName       =     ${package.osName}" />
+  <echo message ="package.osVersion    =     ${package.osVersion}" />
+  <echo message ="install.dir          =     ${install.dir}" />
+  <echo message ="app.dir              =     ${app.dir}" />
+  <echo message ="package.service.url  =     ${package.service.url}" />
+  <echo message ="package.user         =     ${package.user}" />
+  <echo message ="package.userGroup    =     ${package.userGroup}" />
+  <echo message ="api.service.url      =     ${api.service.url}" />
+
+  
+  <!-- 可变参数 -->
+  <property environment="env"/>
+  <property name="bin.dir" value="${basedir}/bin" />
+  <property name="assembly.dir" value="${basedir}/pkgcmd/assembly" />
+  <property name="temp.dir" value="${basedir}/temp" />
+  <property name="current.dir" value="${basedir}/pkgcmd" />
+
+
+  <condition property="osfamily-unix">
+    <os family="unix" />
+  </condition>
+  <condition property="osfamily-windows">
+    <os family="windows" />
+  </condition>
+
+  <!-- 初始化环境目录 -->
+  <target name="enviroment-prepare">
+  
+  	<echo message="初始打包目录:${temp.dir}/{bin,idcos,www,conf,doc}" />
+  
+   	 <mkdir dir="${temp.dir}" />
+   	 <mkdir dir="${temp.dir}/bin" />
+   	 <mkdir dir="${temp.dir}/idcos" />
+   	 <mkdir dir="${temp.dir}/www" />
+   	 <mkdir dir="${temp.dir}/conf" />
+   	 <mkdir dir="${temp.dir}/doc" />
+  </target>
+
+  <!-- 环境编译 -->
+  <target name="complie" depends="enviroment-prepare">
+    <echo message="开始调用${current.dir}/complie.sh 脚本进行编译" />
+  	<exec executable="sh" failonerror="true">
+      <arg value="${current.dir}/complie.sh" />
+    </exec>
+  </target>
+ 
+  <!-- copy文件 -->
+  <target name="copy-package-resource" depends="enviroment-prepare">
+  
+  	<echo message="开始拷贝资源和配置文件到打包目录:${temp.dir}" />
+  	
+    <copy todir="${temp.dir}">
+         <fileset dir="${assembly.dir}">
+           <include name="*.sh" />
+         </fileset>
+    </copy>
+
+    <copy todir="${temp.dir}/conf">
+         <fileset dir="${assembly.dir}/conf">
+           <include name="*" />
+         </fileset>
+    </copy>
+
+       
+  </target>
+  
+  
+   <!-- shell脚本替换 -->
+  <target name="shell-script-replace" depends="copy-package-resource">
+      <echo message="对打包目录中的sh脚本内容进行批量替换:${temp.dir}/*.sh" />
+
+      <!--替换sh脚本 -->
+      <replace dir="${temp.dir}" token="@APP_DIR@" value="${app.dir}" includes="*.sh" encoding="UTF-8"/>
+      <replace dir="${temp.dir}" token="@PACKAGE_NAME@" value="${package.name}" includes="*.sh" encoding="UTF-8"/>
+      <replace dir="${temp.dir}" token="@APP_NAME@" value="${package.name.prefix}" includes="*.sh" encoding="UTF-8"/>
+
+      <!-- 替换conf配置文件 -->
+      <replace dir="${temp.dir}/conf" token="@APP_DIR@" value="${app.dir}" includes="*" encoding="UTF-8"/>
+      <replace dir="${temp.dir}/conf" token="@APP_NAME@" value="${package.name.prefix}" includes="*" encoding="UTF-8"/>
+      <replace dir="${temp.dir}/conf" token="@PACKAGE_NAME@" value="${package.name}" includes="*" encoding="UTF-8"/>
+      <replace dir="${temp.dir}/conf" token="@API_SERVICE_URL@" value="${api.service.url}" includes="*" encoding="UTF-8"/>
+
+      <move todir="${temp.dir}/idcos">
+        <fileset dir="${temp.dir}"> 
+          <include name="*.sh"/> 
+        </fileset> 
+      </move>
+
+  </target>
+    
+ 
+  <!-- 软件打包 -->
+ <target name="package-zip" depends="enviroment-prepare,shell-script-replace">
+ 
+	<echo message="开始打包目录中的文件进行打包:${current.dir}/package.sh 目标文件:${package.name}.zip" />
+ 
+  	<exec executable="sh" failonerror="true">
+         <arg value="${current.dir}/package.sh" />
+         <arg value="${package.name}.zip" />
+    </exec>
+
+  </target>
+  
+ 
+    <!-- 上传软件仓库 -->
+  <target name="upload-package" depends="complie,copy-package-resource,shell-script-replace,package-zip">
+  <echo message="开始上传软件包:${package.name}.zip" />
+  
+   <echo message="curl -v  -F file=@${temp.dir}/${package.name}.zip -F name=${package.name} -F version=${package.version} -F description=${package.description} -F type=${package.type} -F application=${package.application} -F release=${package.release} -F installDir=${install.dir} -F platCode=${package.platCode} -F osName=${package.osName} -F osVersion=${package.osVersion} ${package.service.url} -F user=${package.user} -F userGroup=${package.userGroup}"  />
+    
+    <exec executable="curl" failonerror="true" outputproperty="upload-package.result">
+      <arg value="-F" />
+      <arg value="file=@${temp.dir}/${package.name}.zip" />
+      <arg value="-F" />
+      <arg value="name=${package.name}" />
+      <arg value="-F" />
+      <arg value="version=${package.version}" />
+      <arg value="-F" />
+      <arg value="description=${package.description}" />
+      <arg value="-F" />
+      <arg value="type=${package.type}" />
+      <arg value="-F" />
+      <arg value="application=${package.application}" />
+      <arg value="-F" />
+      <arg value="release=${package.release}" />
+      <arg value="-F" />
+      <arg value="installDir=${install.dir}" />
+      <arg value="-F" />
+      <arg value="platCode=${package.platCode}" />
+      <arg value="-F" />
+      <arg value="osName=${package.osName}" />
+      <arg value="-F" />
+      <arg value="osVersion=${package.osVersion}" />   
+      <arg value="-F" />
+      <arg value="user=${package.user}" />   
+      <arg value="-F" />
+      <arg value="userGroup=${package.userGroup}" />                        
+      <arg value="${package.service.url}" />
+    </exec>
+     
+    <fail message="软件包上传失败! ${upload-package.result}">
+      <condition>
+          <not>
+              <contains substring="&quot;status&quot;:&quot;success&quot;" string="${upload-package.result}">
+              </contains>
+          </not>
+      </condition>
+    </fail>
+
+  </target>
+
+
+
+  <target name="clean">
+      <echo message="开始清除构建过程中产生的数据" />
+      <delete dir="${temp.dir}"/>
+  </target>
+
+
+  <!-- 创建版本 -->
+  <target name="create-version" depends="clean,upload-package">
+  </target>
+  
+  
+</project>

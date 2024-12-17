@@ -1,0 +1,189 @@
+.notify {
+    position: absolute;
+    top: 10px;
+    width: 382px;
+}
+
+.login {
+    background: url("../img/login/bg.png") no-repeat center center fixed;
+    position: fixed;
+    background-size: 100% 100%;
+    margin: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    font-weight: 200;
+    overflow: hidden;
+}
+
+.login .login-logo {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+}
+
+.login .login-logo img {
+    width: 158px;
+}
+
+.login .overlay {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+
+.login .overlay .login-panel-wrapper {
+    display: flex;
+    width: 908px; /* 454px * 2 */
+    margin: 0 auto;
+}
+
+.login .overlay .login-panel {
+    width: 50%;
+    height: 400px;
+    /* margin: 0 auto; */
+    font-size: 12px;
+}
+
+.login .overlay .login-panel.left {
+    background: #07195B;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    text-align: center;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center
+}
+
+.login .overlay .login-panel.left .left-panel-text {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #FDFDFD;
+    font-weight: 400;
+}
+
+.login .overlay .login-panel.right {
+    background: #F7FBFF;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.login .overlay .login-panel .login-header {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.login .overlay .login-panel .login-title img {
+    margin-top: -74px;
+    width: 271px;
+}
+
+.login .overlay .login-body {
+    width: 100%;
+    height: 100%;
+    /* background: white; */
+    padding-top: 75px;
+    /* border-radius: 3px; */
+}
+
+.login .overlay .login-body .login-left {
+    width: 72px;
+}
+
+.login .overlay .login-body .login-body-banner {
+    /*text-align: center;*/
+    padding-left: 100px;
+}
+
+.login .overlay .login-content {
+    margin-top: 20px;
+    padding: 0 100px;
+}
+
+.login .overlay .form-group {
+    margin-bottom: 24px;
+}
+
+.login .overlay .form-group .user-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background: url("../img/login/usericon.svg") no-repeat;
+}
+
+.login .overlay .form-group .pwd-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background: url("../img/login/pwdicon.svg") no-repeat;
+}
+
+.login .overlay input.form-control {
+    height: 40px;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 3px;
+    border-color: #A5AFBC;
+    padding-left: 40px;
+}
+
+.login .overlay input.form-control:focus {
+    border-color: #0492FF;
+}
+
+.login .overlay .btn.submit {
+    /* width: 81px; */
+    width: 100%;
+    height: 34px;
+    padding: 0 10px;
+    text-align: center;
+    background: #07195B;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.login .overlay .btn.submit:hover {
+    background: #348FFE;
+}
+
+.login .overlay .forget-helper {
+    padding-top: 5px;
+}
+
+.login .overlay a {
+    color: #51A3FF;
+    margin: 0 10px;
+}
+
+.login .overlay i.line {
+    width: 2px;
+    border-right: solid 1px #ddd;
+    margin-left: 8px;
+}
+
+.login .overlay .io-btn {
+    padding: 5px 20px;
+    border-radius: 0;
+}
+
+.login .overlay p.footer {
+    color: #5B627C;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}

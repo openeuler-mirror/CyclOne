@@ -1,0 +1,91 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  color: @SubTitle !important;
+}
+h1,
+h2 {
+  color: @Title !important;
+}
+
+.approot {
+  height: 100%;
+  overflow: auto;
+  background-color: #d8d8d8;
+  font-size: 14px;
+  .app-container {
+    height: ~"calc(100% - 50px)";
+    overflow-y: hidden;
+    display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;
+    display: flex;
+    // position: relative;
+    box-sizing: border-box;
+    .app-body-main {
+      height: 100%;
+      box-sizing: border-box;
+      overflow-y: hidden;
+      background-color: @ContainerBg;
+      -ms-flex:1 1 auto;
+      flex:1 1 auto;
+      .app-body-content {
+        //position: relative;
+
+        // 详情页
+        .approot-innder-detail {
+          padding: 16px 16px 48px;
+          overflow-y: auto;
+          box-sizing: border-box;
+          height: ~"calc(100vh - 50px)";
+          -ms-flex:1 1 auto;
+          flex:1 1 auto;
+        }
+
+        //主页面
+        // 没有数的情况下
+        .approot-inner {
+          padding: 16px;
+          // height: 100%;
+          overflow-y: hidden;
+          box-sizing: border-box;
+          .approot-inner-content {
+            overflow-y: auto;
+            background-color: @bg;
+            border-radius: 4px;
+            height: ~"calc(100vh - 82px)";
+            overflow-x: hidden;
+            padding: 16px;
+            box-sizing: border-box;
+            .page {
+              background: @white;
+              overflow-y: auto;
+              font-size: @baseFontSize;
+              overflow-x: hidden;
+              height:100%;
+              .page-header {
+                color: @Title;
+                box-sizing: border-box;
+                //border-bottom: solid 1px #dfdfdf;
+                font-size: 18px;
+                //padding-bottom: 8px;
+                font-weight: 700;
+              }
+              .page-body {
+                padding-top: 10px;
+                //overflow-x: hidden;
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
+        // 有树的情况下
+        .approot-hasTree-inner {
+          //
+          position: relative;
+          display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;
+          display: flex;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{{#if (eq record.dataStatus "0")}}
+    <span style="font-size:12px; color: #4CADF8;" >
+        更新
+    </span>
+{{else if (eq record.dataStatus "1")}}
+    <span style="font-size:12px; color: #4CADF8" >
+        新增
+    </span>
+{{else if (eq record.dataStatus "2")}}
+	<span style="font-size:12px; color: #4CADF8" >
+	    新增
+	</span>
+{{else}}
+    <span style="font-size:12px; color: #FA4848" >
+        {{record.dataStatus}}
+    </span>
+{{/if}}

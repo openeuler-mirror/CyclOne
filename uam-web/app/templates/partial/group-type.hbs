@@ -1,0 +1,11 @@
+<span>
+{{#if (eq record.type "default")}}
+默认
+{{else if (eq record.type "project")}}
+项目组
+{{else if (eq record.type "recheck")}}
+复核
+{{else if (eq record.type "approval")}}
+审批
+{{/if}}
+</span>

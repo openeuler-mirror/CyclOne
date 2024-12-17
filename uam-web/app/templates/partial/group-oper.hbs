@@ -1,0 +1,24 @@
+{{!--
+<a type="button" class="io-table__btn" {{action 'sendAction' 'allocateUser' "USER" record}}>分配用户</a>
+<a type="button" class="io-table__btn" {{action 'sendAction' 'allocateRole' "ROLE" record}}>分配角色</a>
+<a type="button" class="io-table__btn" {{action 'sendAction' 'viewUsers'  record}}>查看用户列表</a>
+<a type="button" class="io-table__btn io-table__btn-danger" {{action 'sendAction' 'update' "INFO" record}}>{{io-icon type="edit"}}</a>
+&nbsp;
+<a type="button" class="io-table__btn io-table__btn-danger" {{action 'sendAction' 'delete' record}}>{{io-icon type="delete"}}</a>
+--}}
+
+{{#tool-tips type="bottom" tip="分配用户"}}
+    <span {{action 'sendAction' 'allocateUser' "USER" record}}  class="h4 text-primary" ><i class="idcicon idcicon-usermanager"></i></span>
+{{/tool-tips}}
+
+{{#tool-tips type="bottom" tip="分配角色"}}
+    <span {{action 'sendAction' 'allocateRole' "ROLE" record}}  class="h4 text-primary" ><i class="idcicon idcicon-rolemanager"></i></span>
+{{/tool-tips}}
+
+{{#tool-tips type="bottom" tip="编辑"}}
+    <span {{action 'sendAction' 'update' "INFO" record}}  class="h4 text-primary" >{{io-icon type="edit"}}</span>
+{{/tool-tips}}
+
+{{#tool-tips type="bottom" tip="删除"}}
+    <span {{action 'sendAction' 'delete' record}}  class="h4 text-danger" >{{io-icon type="delete"}}</span>
+{{/tool-tips}}

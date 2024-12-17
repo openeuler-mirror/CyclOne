@@ -1,0 +1,36 @@
+/**
+ * nav tabs
+ */
+ul.nav-tabs {
+	// @brand-background-color;
+	background: white;
+	margin-top: 10px;
+	border-color: @border-color;
+	li {
+		&:first-child {
+			margin-left: 48px;
+		}
+		a {
+			color: @brand-font-color-d1;
+			padding: 6px 25px;
+			&:hover {
+				background: #f8f8f8;
+			}
+		}
+		&.active{
+			a {
+				background: white !important;
+				color: @brand-font-color-d1 !important;
+				background: none;
+				border-bottom: none;
+				border-color: @border-color;
+			}
+		}
+		&.active {
+			a {
+				position: relative;
+				bottom: -1px;
+			}
+		}
+	}
+}

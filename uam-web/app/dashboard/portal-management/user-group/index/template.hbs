@@ -1,0 +1,47 @@
+<div class="inner-app">
+	<div class="col-md-24 inner-app__context-bar">
+		<span class="context-bar-nav-header no-shadow">
+			<span class="context-bar__icon">
+				<i class="idcicon idcicon-usergroup"></i> 用户组管理
+			</span>
+		</span>
+		<span class="context-bar__right-button-group pull-right">
+			<span class="input-group search">
+				{{input type="text"  value=filterString placeholder="请输入搜索内容"}}
+				{{io-icon type="search"}}
+			</span>
+
+			{{#if (permission-check model.permissions "userGroup.create")}}
+			<button class="io-btn io-btn-primary" {{action "editUserGroupAction" "ALL"}} data-dismiss="modal">{{io-icon type="plus"}} 新建用户组</button>
+			{{/if}}
+		</span>
+	</div>
+
+	{{#if (permission-check model.permissions "userGroup.list")}}
+	<div class="inner-app__main collapsed">
+		{{#if loading}}
+			{{io-loading}}
+		{{else}}
+			{{#if model.columns}}
+				{{io-table
+				columns=model.columns
+				showIndexNumber=true
+				showGlobalFilter=false
+				filterString=filterString
+				indexNumberBase=model.indexNumber
+				allocateUser = "editUserGroupAction"
+				allocateRole="editUserGroupAction"
+				update="editUserGroupAction"
+				delete="deleteUserGroupAction"
+				lookUpAction="lookUpAction"
+				data=model.data}}
+			{{/if}}
+			{{#if model.paginationShow}}
+				<div class="row">
+					{{io-pagination change="pageClick" count=model.meta.pages current=model.meta.offset}}
+				</div>
+			{{/if}}
+		{{/if}}
+	</div>
+	{{/if}}
+</div>

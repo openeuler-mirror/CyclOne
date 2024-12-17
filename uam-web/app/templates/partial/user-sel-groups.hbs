@@ -1,0 +1,19 @@
+<span>
+{{#io-dropdown}}
+	{{#io-dropdown-trigger}}
+		{{record.firstValue}}
+		{{#if (eq record.groupNumbers 0)}}
+		{{else if (eq record.groupNumbers 1)}}	
+		{{else}}
+			{{io-icon type="down"}}
+		{{/if}}
+	{{/io-dropdown-trigger}}
+	{{#io-dropdown-overlay}}
+		{{#io-menu}}
+			{{#each record.selGroups as |item|}}
+        		{{#io-menu-item}} {{item}} {{/io-menu-item}}
+    		{{/each}}
+		{{/io-menu}}
+	{{/io-dropdown-overlay}}
+{{/io-dropdown}}
+</span>

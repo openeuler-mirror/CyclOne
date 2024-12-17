@@ -1,0 +1,56 @@
+<div class="application">
+    <div class="app-header clearfix">
+        <div class="app-header__logo pull-left">
+            {{#link-to 'dashboard.portalManagement.user' }}<img src="/img/logo.png" alt=""> {{/link-to}}
+        </div>
+
+        <div class="app-header__user pull-right">
+            {{#if (eq true model.ifTenant)}}
+            {{#if (eq "default" model.authInfo.user.tenantId)}}
+                {{#io-select class="io-select-dropdown-menu-item-tenant" value=model.tenant required=true placeholder="切换租户" }}
+                    {{#each model.tenants as |item|}}
+                        {{#io-option value=item.tenantId}}{{item.tenantName}}{{/io-option}}
+                    {{/each}}
+                {{/io-select}}
+                &nbsp;&nbsp;
+            {{/if}}
+            {{/if}}
+
+			<img src="/img/avatar.png" alt="">
+
+            {{#if (eq true model.ifTenant)}}
+            <span ><font color="white">{{model.user.name}} 
+             {{#each model.tenants as |item|}}
+               {{#if (eq item.tenantId model.authInfo.user.tenantId)}}
+                 - {{item.tenantName}} 
+               {{/if}}                        
+             {{/each}}
+             </font></span>
+             {{/if}}
+
+             {{#if (eq false model.ifTenant)}}
+            <span ><font color="white">{{model.user.name}} 
+             </font></span>
+             {{/if}}
+
+			{{#io-dropdown}}
+				{{#io-dropdown-trigger}}
+				{{authSrv.curUser.name}} {{io-icon type="down"}}
+				{{/io-dropdown-trigger}}
+				{{#io-dropdown-overlay}}
+					{{#io-menu}}
+					{{#io-menu-item onClick="logout"}} 退出 {{/io-menu-item}}
+					{{/io-menu}}
+				{{/io-dropdown-overlay}}
+			{{/io-dropdown}}
+			{{!-- {{#io-select value=chooseItem required=true onChange="onChange" }}
+			{{#each options as |idc|}}
+			{{#io-option value=idc.id}}{{idc.name}}{{/io-option}}
+			{{/each}}
+			{{/io-select}} --}}
+		</div>
+    </div>
+    <div class="app-body-wrapper">
+        {{outlet}}
+    </div>
+</div>

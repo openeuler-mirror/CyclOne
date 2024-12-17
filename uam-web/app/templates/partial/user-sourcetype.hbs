@@ -1,0 +1,9 @@
+<span>
+{{#if (eq record.sourceType "native")}}
+UAM
+{{else if (eq record.sourceType "ldap")}}
+LDAP
+{{else if (eq record.sourceType "webank")}}
+webank
+{{/if}}
+</span>

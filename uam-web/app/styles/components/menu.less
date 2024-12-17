@@ -1,0 +1,91 @@
+/**
+ * themed menu 
+ */
+.io-menu {
+	&-idcos-dark {
+		background: none;
+		border-bottom: none;
+		position: relative;
+		.io-menu-item {
+			font-size: 14px;
+			border-bottom: none;
+			padding: 0 32px;
+			color: @brand-font-color;
+			i {
+			    font-size: 16px;
+			    margin-right: 8px;
+			    margin-bottom: 3px;
+				vertical-align: middle;
+			}
+			a {
+				color: #757984;
+				font-weight: bold;
+			}
+			&-selected {
+				background: #17191A;
+				border-top: solid 3px @brand-primary;
+				border-bottom: none;
+				color: @brand-primary;
+				a {
+					color: @brand-primary;
+					font-weight: bold;
+				}
+			}
+			&-active {
+				color: @brand-primary;
+			}
+		}
+	}
+	&-idcos-light {
+		background: @brand-background-color-l1;
+		.io-menu-item {
+			@height: 62px;
+			font-size: 16px;
+			color: @brand-font-color-d1;
+			height: @height;
+			line-height: @height;
+			i {
+				font-size: 20px;
+				margin-right: 25px;
+			}
+			&, &:hover {
+				.io-badge {
+					top: (@height / 2) - 10px;
+					background: white;
+					color: @brand-font-color-d1;
+				}
+			}
+			&:hover {
+				background: darken(@brand-background-color-l1, 5%);
+			}
+			&-active, &-active:hover, &-selected, &-selected:hover {
+				border-right: none;
+				background: darken(@brand-background-color-l1, 7%);
+				.io-badge {
+					background: @brand-primary;
+					color: white;
+				}
+			}
+		}
+
+	}
+
+}
+
+.io-badge {
+    height: 20px;
+    border-radius: 10px;
+    min-width: 20px;
+    background: #f50;
+    border: 1px solid transparent;
+    color: #fff;
+    line-height: 18px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    transform-origin: -10% center;
+    z-index: 10;
+    font-family: tahoma;
+    transition: all .3s ease-in-out;
+}

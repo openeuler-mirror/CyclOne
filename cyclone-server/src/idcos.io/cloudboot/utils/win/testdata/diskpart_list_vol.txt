@@ -1,0 +1,14 @@
+
+Microsoft DiskPart version 6.3.9600
+
+Copyright (C) 1999-2013 Microsoft Corporation.
+On computer: WIN-C47GE2L79DO
+
+Disk 0 is now the selected disk.
+
+Volume 1 is the selected volume.
+
+  Volume ###  Ltr  Label        Fs     Type        Size     Status     Info
+  ----------  ---  -----------  -----  ----------  -------  ---------  --------
+  Volume 0         ????         NTFS   Partition    350 MB  Healthy    System  
+* Volume 1     C                NTFS   Partition     24 GB  Healthy    Boot    

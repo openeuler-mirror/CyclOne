@@ -1,0 +1,58 @@
+/**
+ * accordion 
+ */
+.accordion-bare {
+	.panel {
+		box-shadow: none;
+		position: relative;
+		&-heading {
+			padding-left: 20px;
+			border-bottom: none;
+			a {
+				text-decoration: none;
+				&:hover {
+					color: lighten(@brand-font-color-d1, 10%);
+				}
+			}
+		}
+		&-body {
+			border-top: none !important;
+		}
+		&-collapse {
+			~ .toggle {
+				position: absolute;
+				transform: scale(0.5) rotate(0);
+			    left: -1px;
+			    top: 6px;
+			    trasition: all .3s ease-in;
+			}
+			&.in {
+				~ .toggle {
+					transform: scale(0.5) rotate(90deg);
+				}
+			}
+		}
+	}
+
+	.io-steps {
+		@color: @brand-font-color-d1;
+		&-title {
+			color: @color !important;
+		}
+		&-description {
+			padding: 20px 0 20px 40px;
+			color: @color !important;
+		}
+		&-main {
+			overflow: visible !important;
+		}
+
+		&-tail>i:after {
+			background: @border-color !important;
+		}
+	}
+
+	.io-transfer-list-header {
+		color: @brand-font-color-d1;
+	}
+}

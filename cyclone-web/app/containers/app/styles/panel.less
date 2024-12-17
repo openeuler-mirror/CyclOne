@@ -1,0 +1,135 @@
+.panelBack-b {
+  padding: 8px;
+  font-size: 14px;
+  color: @BreadcrumbFontBack;
+  padding-top: 0px;
+  a {
+    font-size: 14px;
+    cursor: pointer;
+    color: @BreadcrumbFontBack !important;
+    &:hover {
+      color: @blueDark !important;
+    }
+  }
+  .panel-nb-title {
+    color: @BreadcrumbFontTitle;
+  }
+}
+.panel {
+  background-color: @PanelBg;
+  margin-bottom: 8px;
+  border: solid 1px @PanelBorder;
+  border-radius: @PanelBorderRadius;
+  position: relative;
+  .panel-label-row {
+    display: inline-block;
+    font-size: 14px;
+    color: @PanelTitleFont;
+  }
+  .panel-label {
+    //width: 80px;
+    display: inline-block;
+    font-size: 14px;
+    color: @PanelTitleFont;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+  }
+  .panelBack-container {
+    .panelBack {
+      padding:16px 16px 6px 16px;
+      font-size: 18px;
+      border-radius: @PanelBorderRadius;
+      color: @PanelTitleFont;
+      border-bottom: 1px solid @PanelBorder;
+      font-weight: 500;
+      .panelBack-icon {
+        margin-right: 10px;
+        a {
+          cursor: pointer;
+          color: @PanelNormalFont !important;
+          font-size: 16px;
+          &:hover {
+            color: @blueDark !important;
+          }
+        }
+      }
+      .panelBack-title {
+        a {
+          color: @PanelTitleFont !important;
+          cursor: pointer;
+          font-size: 18px;
+          &:hover {
+            color: @blueDark !important;
+          }
+        }
+      }
+    }
+    .panelStep {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 32px;
+      padding-top: 24px;
+    }
+  }
+
+  .panel-title {
+    padding:16px 20px 6px 20px;
+    font-size: 16px;
+    border-radius: @PanelBorderRadius;
+    color: @PanelTitleFont;
+    border-bottom: 1px solid @PanelBorder;
+    .more{
+      float: right;
+      text-align: right;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .panelBack-icon {
+      margin-right: 10px;
+      a {
+        cursor: pointer;
+        color: @PanelNormalFont !important;
+        font-size: 16px;
+        &:hover {
+          color: @blueDark !important;
+        }
+      }
+    }
+  }
+  .panel-body {
+    padding: 16px;
+    background: white;
+    overflow-y: auto;
+    color: @PanelNormalFont;
+    font-size: 14px;
+    div[class^='ant-col-'] {
+      line-height: 24px;
+    }
+    .group {
+      padding: 10px 0;
+      border-bottom: solid 1px @PanelBorder;
+      margin: 20px 0;
+    }
+    .panel-label {
+      font-size: 14px;
+      color: @PanelTitleFont;
+    }
+  }
+  .panel-footer {
+    padding: 0 16px 8px 16px;
+    text-align: right;
+  }
+  .inlineRow {
+    display: inline-block !important;
+    vertical-align: bottom;
+    margin-left: 3%;
+    width:80%;
+    .ant-input {
+      width: 60%;
+    }
+  }
+}
+

@@ -1,0 +1,11 @@
+<span>
+{{#if (eq record.status "ENABLED")}}
+激活
+{{else if (eq record.status "DISABLED")}}
+禁用
+{{else if (eq record.status "INIT")}}
+初始
+{{else if (eq record.status "LOCKED")}}
+锁定
+{{/if}}
+</span>

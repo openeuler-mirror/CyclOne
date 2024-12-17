@@ -1,0 +1,131 @@
+@echo on
+
+:: 移动 zabbix-agent
+move c:\install\zabbix_agents_3.0.4.win c:\zabbix_agents_3.0.4.win
+
+:: 安装 zabbix_agent
+powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\zabbix_agents_3.0.4.win\zabbix_agent_install.ps1 {ZabbixProxy}
+
+:: 安装 hadoop
+powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile C:\install\hadoop\zorkagent_install.ps1 {BigdataRoute3} {BigdataID}
+
+:: 设置 ntp server
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time\Parameters" /v "NtpServer" /d "{NTP1},0x9 {NTP2},0x9 {NTP3},0x9" /t REG_SZ /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time\Parameters" /v "Type" /d "NTP" /t REG_SZ /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time\TimeProviders\NtpClient" /v "SpecialPollInterval" /d "900" /t REG_DWORD /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\W32Time\Config" /v "MaxAllowedPhaseOffset" /d "300" /t REG_DWORD /f
+sc triggerinfo w32time delete
+sc config w32time start= auto
+net start w32time
+w32tm /resync
+
+:: 挂载Z盘
+net use Z: \\osinstall.idcos.com\image
+
+:: if SAN exits
+if "{SANStore}" == "Yes" (
+    xcopy /s /e /y /i Z:\windows\san C:\install\san
+    start /wait C:\install\san\sansurfer\scli-1.7.3-37.windows.exe /s
+::  start /wait C:\install\san\hdlm\HDLM_Windows\DLMTools\installhdlm.exe -f C:\install\san\hdlm\HDLM_Windows\DLMTools\sample_installhdlm.ini
+)
+
+:: if NBU exits
+if "{IsNeedNBU}" == "Yes" (
+    xcopy /y /i Z:\windows\NetBackup_7.7.3_Win.zip C:\install\self-install
+)
+
+:: if is DMZ
+if "{Symantec}" == "ddd.ddd.ddd.ddd" (
+    xcopy /s /e /y /i Z:\windows\kcaom\kcaom-dmz C:\kcaom
+    xcopy /s /e /y /i Z:\windows\anti_virus\anti_virus_dmz C:\install\anti_virus_dmz
+    xcopy /s /e /y /i Z:\windows\wsus\wsus-dmz.ps1 C:\install\wsus\
+    start /wait C:\install\anti_virus_dmz\setup.exe
+    powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile C:\install\kcaom-agent.ps1
+    powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\install\wsus\wsus-dmz.ps1
+)
+
+:: if is NO_DMZ
+if "{Symantec}" == "ddd.ddd.ddd.ddd" (
+    xcopy /s /e /y /i Z:\windows\kcaom\kcaom-nodmz C:\kcaom
+    xcopy /s /e /y /i Z:\windows\anti_virus\anti_virus_no_dmz C:\install\anti_virus_no_dmz
+    xcopy /s /e /y /i Z:\windows\wsus\wsus-nodmz.ps1 C:\install\wsus\
+    start /wait C:\install\anti_virus_no_dmz\setup.exe
+    powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile C:\install\kcaom-agent.ps1
+    powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\install\wsus\wsus-nodmz.ps1
+)
+
+:: if is shanghai_deposit
+if "{Symantec}" == "ddd.ddd.ddd.ddd" (
+    xcopy /s /e /y /i Z:\windows\anti_virus\shanghai_deposit C:\install\shanghai_deposit
+    xcopy /s /e /y /i Z:\windows\wsus\wsus-sh-depost.ps1 C:\install\wsus\
+    start /wait C:\install\shanghai_deposit\setup.exe
+    powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\install\wsus\wsus-sh-depost.ps1
+)
+
+:: if is shanghai_trade
+if "{Symantec}" == "ddd.ddd.ddd.ddd" (
+    xcopy /s /e /y /i Z:\windows\anti_virus\shanghai_trade C:\install\shanghai_trade
+    xcopy /s /e /y /i Z:\windows\wsus\wsus-sh-trade.ps1 C:\install\wsus\
+    start /wait C:\install\shanghai_trade\setup.exe
+    powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\install\wsus\wsus-sh-trade.ps1
+)
+
+:: 卸载Z盘
+net use Z: /delete
+
+:: Baseline
+call C:\install\win2012-baseline\baseline-2012.bat
+
+:: 禁用 UAC
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
+
+:: 开启远程桌面
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 0 /f
+
+:: 设置 MaxUserPort 为 65534
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v MaxUserPort /t REG_DWORD /d 65534 /f
+
+:: 设置显示桌面图标
+powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\install\ShowDesktopIcons.ps1
+
+:: 设置默认英文输入法
+powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\install\SetUserLanguageList.ps1
+
+:: 安装 7-zip
+start /wait C:\install\7zip-4.6.5.exe /S
+
+:: 安装 cmdb
+start /wait cscript C:\install\cmdb_agent\agent_install_windows_luoji.vbs 127.0.0.1
+
+:: 关闭防火墙
+netsh advfirewall set allprofiles state off
+
+:: 用户重命名
+wmic useraccount where name='Administrator' rename dgadmin
+
+:: 设置初始密码
+net user dgadmin gxzq@82130833
+
+:: 设置下一次登录修改密码
+:: net user dgadmin /logonpasswordchg:yes
+
+:: 修改磁盘卷标
+wmic logicaldisk where "deviceid='c:'" set volumename="sys"
+wmic logicaldisk where "deviceid='d:'" set volumename="data"
+
+:: 添加静态路由
+if not "{StaticRT}" == "" (
+route add -p 10.0.0.0 mask 255.0.0.0 {StaticRT}
+route add -p 172.16.0.0 mask 255.240.0.0 {StaticRT}
+route add -p 192.168.0.0 mask 255.255.0.0 {StaticRT}
+)
+
+:: 设置电源高性能方案
+C:\install\high_performance.bat
+
+:: 设置powershell执行策略
+powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile set-executionpolicy unrestricted -confirm:$false
+
+:: 健康检查
+call C:\firstboot\health-check.exe

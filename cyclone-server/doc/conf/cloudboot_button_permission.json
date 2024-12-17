@@ -1,0 +1,1022 @@
+{
+  "content": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_idc_create",
+                "note": "按钮-数据中心管理-新增",
+                "title": "新增数据中心"
+              },
+              {
+                "children": [],
+                "id": "button_idc_update",
+                "note": "按钮-数据中心管理-修改",
+                "title": "修改数据中心"
+              },
+              {
+                "children": [],
+                "id": "button_idc_delete",
+                "note": "按钮-数据中心管理-删除",
+                "title": "删除数据中心"
+              },
+              {
+                "children": [],
+                "id": "button_idc_accepted",
+                "note": "按钮-数据中心管理-验收",
+                "title": "验收数据中心"
+              },
+              {
+                "children": [],
+                "id": "button_idc_production",
+                "note": "按钮-数据中心管理-投产",
+                "title": "投产数据中心"
+              },
+              {
+                "children": [],
+                "id": "button_idc_abolished",
+                "note": "按钮-数据中心管理-裁撤",
+                "title": "裁撤数据中心"
+              }
+            ],
+            "id": "menu_idc",
+            "note": "菜单-数据中心管理-数据中心",
+            "title": "数据中心"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_server_room_create",
+                "note": "按钮-机房信息管理-新增",
+                "title": "新增机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_update",
+                "note": "按钮-机房信息管理-修改",
+                "title": "修改机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_delete",
+                "note": "按钮-机房信息管理-删除",
+                "title": "删除机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_accepted",
+                "note": "按钮-机房信息管理-验收",
+                "title": "验收机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_production",
+                "note": "按钮-机房信息管理-投产",
+                "title": "投产机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_abolished",
+                "note": "按钮-机房信息管理-裁撤",
+                "title": "裁撤机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_import",
+                "note": "按钮-机房信息管理-导入",
+                "title": "导入机房信息"
+              },
+              {
+                "children": [],
+                "id": "button_server_room_download",
+                "note": "按钮-机房信息管理-下载模板",
+                "title": "下载机房信息模板"
+              }
+            ],
+            "id": "menu_server_room",
+            "note": "菜单-数据中心管理-机房",
+            "title": "机房"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_network_area_create",
+                "note": "按钮-网络区域-新增",
+                "title": "新增网络区域"
+              },
+              {
+                "children": [],
+                "id": "button_network_area_update",
+                "note": "按钮-网络区域-修改",
+                "title": "修改网络区域"
+              },
+              {
+                "children": [],
+                "id": "button_network_area_delete",
+                "note": "按钮-网络区域-删除",
+                "title": "删除网络区域"
+              },
+              {
+                "children": [],
+                "id": "button_network_area_production",
+                "note": "按钮-网络区域-投产",
+                "title": "投产网络区域"
+              },
+              {
+                "children": [],
+                "id": "button_network_area_offline",
+                "note": "按钮-网络区域-下线",
+                "title": "下线网络区域"
+              },
+              {
+                "children": [],
+                "id": "button_network_area_import",
+                "note": "按钮-网络区域-导入",
+                "title": "导入网络区域"
+              },
+              {
+                "children": [],
+                "id": "button_network_area_download",
+                "note": "按钮-网络区域-下载模板",
+                "title": "下载网络区域模板"
+              }
+            ],
+            "id": "menu_network_area",
+            "note": "菜单-数据中心管理-网络区域",
+            "title": "网络区域"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_server_cabinet_create",
+                "note": "按钮-机架-新增",
+                "title": "新增机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_update",
+                "note": "按钮-机架-修改",
+                "title": "修改机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_delete",
+                "note": "按钮-机架-删除",
+                "title": "删除机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_enabled",
+                "note": "按钮-机架-启用",
+                "title": "启用机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_powerOn",
+                "note": "按钮-机架-开电",
+                "title": "开电机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_powerOff",
+                "note": "按钮-机架-关电",
+                "title": "关电机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_offline",
+                "note": "按钮-机架-下线",
+                "title": "下线机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_locked",
+                "note": "按钮-机架-锁定",
+                "title": "锁定机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_type",
+                "note": "按钮-机架-更新机架类型",
+                "title": "更新机架类型"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_remark",
+                "note": "按钮-机架-备注",
+                "title": "更新机架备注"
+              },                                         
+              {
+                "children": [],
+                "id": "button_server_cabinet_import",
+                "note": "按钮-机架-导入",
+                "title": "导入机架"
+              },
+              {
+                "children": [],
+                "id": "button_server_cabinet_download",
+                "note": "按钮-机架-下载模板",
+                "title": "下载机架模板"
+              }
+            ],
+            "id": "menu_server_cabinet",
+            "note": "菜单-数据中心管理-机架",
+            "title": "机架"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_server_usite_create",
+                "note": "按钮-机位-新增",
+                "title": "新增机位"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_update",
+                "note": "按钮-机位-修改",
+                "title": "修改机位"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_delete",
+                "note": "按钮-机位-删除",
+                "title": "删除机位"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_delete_port",
+                "note": "按钮-机位-删除端口",
+                "title": "删除机位端口"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_status",
+                "note": "按钮-机位-更新机位状态",
+                "title": "更新机位状态"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_remark",
+                "note": "按钮-机位-备注",
+                "title": "更新机位备注"
+              },              
+              {
+                "children": [],
+                "id": "button_server_usite_import",
+                "note": "按钮-机位-导入",
+                "title": "导入机位"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_download",
+                "note": "按钮-机位-下载模板",
+                "title": "下载机位模板"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_import_port",
+                "note": "按钮-机位端口-导入",
+                "title": "导入机位端口"
+              },
+              {
+                "children": [],
+                "id": "button_server_usite_download_port",
+                "note": "按钮-机位端口-下载模板",
+                "title": "下载机位端口模板"
+              }
+            ],
+            "id": "menu_server_usite",
+            "note": "菜单-数据中心管理-机位",
+            "title": "机位"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_store_room_create",
+                "note": "按钮-库房-新增",
+                "title": "新增库房管理单元"
+              },
+              {
+                "children": [],
+                "id": "button_store_room_import",
+                "note": "按钮-库房-导入",
+                "title": "导入库房管理单元"
+              },
+              {
+                "children": [],
+                "id": "button_store_room_delete",
+                "note": "按钮-库房-删除",
+                "title": "删除库房管理单元"
+              },
+              {
+                "children": [],
+                "id": "button_store_room_update",
+                "note": "按钮-库房-修改",
+                "title": "修改库房管理单元"
+              },
+              {
+                "children": [],
+                "id": "button_virtual_cabinet_create",
+                "note": "按钮-虚拟货架-新增",
+                "title": "新增虚拟货架"
+              },
+              {
+                "children": [],
+                "id": "button_virtual_cabinet_delete",
+                "note": "按钮-虚拟货架-删除",
+                "title": "删除虚拟货架"
+              }
+            ],
+            "id": "menu_store_room",
+            "note": "菜单-数据中心管理-库房",
+            "title": "库房信息管理"
+          }
+        ],
+        "id": "menu_idc_management",
+        "note": "菜单-数据中心管理",
+        "title": "数据中心管理"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_network_device_create",
+                "note": "按钮-网络设备-新增",
+                "title": "新增网络设备"
+              },
+              {
+                "children": [],
+                "id": "button_network_device_delete",
+                "note": "按钮-网络设备-删除",
+                "title": "删除网络设备"
+              },
+              {
+                "children": [],
+                "id": "button_network_device_sync",
+                "note": "按钮-网络设备-同步",
+                "title": "同步网络设备"
+              },
+              {
+                "children": [],
+                "id": "button_network_device_import_download",
+                "note": "按钮-网络设备-下载导入模板",
+                "title": "下载导入网络设备模板"
+              },
+              {
+                "children": [],
+                "id": "button_network_device_import",
+                "note": "按钮-网络设备-导入",
+                "title": "导入网络设备"
+              }
+            ],
+            "id": "menu_network_device",
+            "note": "菜单-网络管理-网络设备",
+            "title": "网络设备"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_ip_network_create",
+                "note": "按钮-IP网段管理-新增",
+                "title": "新增IP网段管理"
+              },
+              {
+                "children": [],
+                "id": "button_ip_network_update",
+                "note": "按钮-IP网段管理-修改",
+                "title": "修改IP网段管理"
+              },
+              {
+                "children": [],
+                "id": "button_ip_network_delete",
+                "note": "按钮-IP网段管理-删除",
+                "title": "删除IP网段管理"
+              },
+              {
+                "children": [],
+                "id": "button_ip_network_sync",
+                "note": "按钮-IP网段管理-同步",
+                "title": "同步IP网段"
+              },
+              {
+                "children": [],
+                "id": "button_ip_network_import_download",
+                "note": "按钮-IP网段管理-导入模板下载",
+                "title": "下载导入IP网段模板"
+              },
+              {
+                "children": [],
+                "id": "button_ip_network_import",
+                "note": "按钮-IP网段管理-导入",
+                "title": "导入IP网段"
+              }
+            ],
+            "id": "menu_ip_network",
+            "note": "菜单-网络管理-IP网段",
+            "title": "IP网段"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_ip_assign",
+                "note": "按钮-IP分配-分配",
+                "title": "IP分配"
+              },
+              {
+                "children": [],
+                "id": "button_ip_unassign",
+                "note": "按钮-IP分配-取消分配",
+                "title": "取消IP分配"
+              }
+            ],
+            "id": "menu_ip",
+            "note": "菜单-网络管理-IP分配",
+            "title": "IP分配"
+          }
+        ],
+        "id": "menu_network_management",
+        "note": "菜单-网络管理",
+        "title": "网络管理"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_physical_machine_update_status",
+                "note": "按钮-物理机列表-修改",
+                "title": "批量修改物理机状态"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_update_usage",
+                "note": "按钮-物理机列表-修改",
+                "title": "批量修改物理机用途"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_update",
+                "note": "按钮-物理机列表-修改",
+                "title": "修改物理机"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_import",
+                "note": "按钮-物理机列表-导入",
+                "title": "存量物理机导入"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_download",
+                "note": "按钮-物理机列表-下载模板",
+                "title": "存量物理机模板下载"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_export",
+                "note": "按钮-物理机列表-导出",
+                "title": "物理机导出"
+              },
+              {
+                "children": [],
+                "id": "button_device_store_import",
+                "note": "按钮-物理机列表-导入",
+                "title": "物理机导入到库房"
+              },
+              {
+                "children": [],
+                "id": "button_device_store_import_download",
+                "note": "按钮-物理机列表-下载模板",
+                "title": "物理机导入到库房模板下载"
+              }
+            ],
+            "id": "menu_physical_machine",
+            "note": "菜单-物理机管理-物理机列表",
+            "title": "物理机列表"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_physical_machine_update_oob",
+                "note": "按钮-带外管理-修改带外",
+                "title": "修改物理机带外"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_powerOn",
+                "note": "按钮-带外管理-开电",
+                "title": "开电物理机"
+              },
+              {
+                "children": [],
+                "id": "button_physical_machine_networkBoot",
+                "note": "按钮-带外管理-从网卡启动",
+                "title": "从网卡启动物理机"
+              },
+              {
+                "children": [],
+                "id": "button_oob_re_access",
+                "note": "按钮-带外管理-重新纳管带外",
+                "title": "重新纳管带外"
+              },
+              {
+                "children": [],
+                "id": "button_physical_oob_export",
+                "note": "按钮-带外管理-导出带外",
+                "title": "导出带外"
+              }
+            ],
+            "id": "menu_oob_info",
+            "note": "菜单-物理机管理-带外管理",
+            "title": "带外管理"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_special_device_create",
+                "note": "按钮-特殊设备列表-新增",
+                "title": "新增特殊设备"
+              },
+              {
+                "children": [],
+                "id": "button_special_device_delete",
+                "note": "按钮-特殊设备列表-新增",
+                "title": "新增特殊设备"
+              },
+              {
+                "children": [],
+                "id": "button_special_device_import_download",
+                "note": "按钮-特殊设备列表-下载模板",
+                "title": "导入特殊设备模板下载"
+              },
+              {
+                "children": [],
+                "id": "button_special_device_import",
+                "note": "按钮-特殊设备列表-导入",
+                "title": "导入特殊设备"
+              }
+            ],
+            "id": "menu_special_device",
+            "note": "菜单-物理机管理-特殊设备列表",
+            "title": "特殊设备列表"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_osInstall",
+                "note": "按钮-待部署物理机-申请上架部署",
+                "title": "待部署物理机申请上架部署"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_powerOn",
+                "note": "按钮-待部署物理机-开电",
+                "title": "待部署物理机开电"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_powerOff",
+                "note": "按钮-待部署物理机-关电",
+                "title": "待部署物理机关电"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_reBoot",
+                "note": "按钮-待部署物理机-重启",
+                "title": "待部署物理机重启"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_networkBoot",
+                "note": "按钮-待部署物理机-从网卡启动",
+                "title": "待部署物理机从网卡启动"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_download",
+                "note": "按钮-待部署物理机-下载",
+                "title": "下载待部署物理机模板"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_import",
+                "note": "按钮-待部署物理机-导入",
+                "title": "导入待部署物理机模板"
+              },
+              {
+                "children": [],
+                "id": "button_predeploy_physical_machine_delete",
+                "note": "按钮-待部署物理机-删除",
+                "title": "删除物理机"
+              }
+            ],
+            "id": "menu_predeploy_physical_machine",
+            "note": "菜单-物理机管理-待部署物理机",
+            "title": "待部署物理机"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_device_setting_reInstall",
+                "note": "按钮-部署列表-重新部署",
+                "title": "重新部署"
+              },
+              {
+                "children": [],
+                "id": "button_dhcp_token_release",
+                "note": "按钮-部署列表-释放DHCP令牌",
+                "title": "释放DHCP令牌"
+              },
+              {
+                "children": [],
+                "id": "button_dhcp_token_batch_release",
+                "note": "按钮-部署列表-批量释放DHCP令牌",
+                "title": "批量释放DHCP令牌"
+              },
+              {
+                "children": [],
+                "id": "button_device_setting_cancelInstall",
+                "note": "按钮-部署列表-取消部署",
+                "title": "取消部署"
+              },
+              {
+                "children": [],
+                "id": "button_device_setting_delete",
+                "note": "按钮-部署列表-删除",
+                "title": "删除部署物理机"
+              }
+            ],
+            "id": "menu_device_setting",
+            "note": "菜单-物理机管理-部署列表",
+            "title": "部署列表"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_device_setting_rule_create",
+                "note": "按钮-装机参数规则-新增",
+                "title": "新增装机参数规则"
+              },
+              {
+                "children": [],
+                "id": "button_device_setting_rule_update",
+                "note": "按钮-装机参数规则-修改",
+                "title": "修改装机参数规则"
+              },              
+              {
+                "children": [],
+                "id": "button_device_setting_rule_delete",
+                "note": "按钮-装机参数规则-删除",
+                "title": "删除装机参数规则"
+              }
+            ],
+            "id": "menu_device_setting_rule",
+            "note": "菜单-物理机管理-装机参数规则列表",
+            "title": "装机参数规则列表"
+          },          
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_inspection_addTask",
+                "note": "按钮-硬件巡检-新建巡检任务",
+                "title": "新建巡检任务"
+              },
+              {
+                "children": [],
+                "id": "button_inspection_inspect",
+                "note": "按钮-硬件巡检-重新巡检",
+                "title": "重新巡检"
+              },
+              {
+                "children": [],
+                "id": "button_inspection_inspect_all",
+                "note": "按钮-硬件巡检-巡检全部",
+                "title": "巡检全部"
+              }
+            ],
+            "id": "menu_inspection",
+            "note": "菜单-物理机管理-硬件巡检",
+            "title": "硬件巡检"
+          }
+        ],
+        "id": "menu_physical_machine_management",
+        "note": "菜单-物理机管理",
+        "title": "物理机管理"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_order_create",
+                "note": "按钮-订单列表-新增",
+                "title": "新增订单"
+              },
+              {
+                "children": [],
+                "id": "button_order_delete",
+                "note": "按钮-订单列表-删除",
+                "title": "删除订单"
+              },
+              {
+                "children": [],
+                "id": "button_order_cancel",
+                "note": "按钮-订单列表-取消",
+                "title": "取消订单"
+              },
+              {
+                "children": [],
+                "id": "button_order_confirm",
+                "note": "按钮-订单列表-确认",
+                "title": "确认订单"
+              },
+              {
+                "children": [],
+                "id": "button_order_export",
+                "note": "按钮-订单列表-导出",
+                "title": "导出订单"
+              }
+            ],
+            "id": "menu_order",
+            "note": "菜单-订单管理-订单列表",
+            "title": "订单列表"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_device_category_create",
+                "note": "按钮-设备类型列表-新增",
+                "title": "新增设备类型"
+              },
+              {
+                "children": [],
+                "id": "button_device_category_delete",
+                "note": "按钮-设备类型列表-删除",
+                "title": "删除设备类型"
+              },
+              {
+                "children": [],
+                "id": "button_device_category_update",
+                "note": "按钮-设备类型列表-修改",
+                "title": "修改设备类型"
+              }
+            ],
+            "id": "menu_device_category",
+            "note": "菜单-订单管理-设备类型列表",
+            "title": "设备类型列表"
+          }
+        ],
+        "id": "menu_order_management",
+        "note": "菜单-订单管理",
+        "title": "订单管理"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_system_template_create",
+                "note": "按钮-PXE配置-新建",
+                "title": "新建PXE配置"
+              },
+              {
+                "children": [],
+                "id": "button_system_template_update",
+                "note": "按钮-PXE配置-修改",
+                "title": "修改PXE配置"
+              },
+              {
+                "children": [],
+                "id": "button_system_template_delete",
+                "note": "按钮-PXE配置-删除",
+                "title": "删除PXE配置"
+              },
+              {
+                "children": [],
+                "id": "button_mirror_template_create",
+                "note": "按钮-镜像配置-新建",
+                "title": "新建镜像配置"
+              },
+              {
+                "children": [],
+                "id": "button_mirror_template_update",
+                "note": "按钮-镜像配置-修改",
+                "title": "修改镜像配置"
+              },
+              {
+                "children": [],
+                "id": "button_mirror_template_delete",
+                "note": "按钮-镜像配置-删除",
+                "title": "删除镜像配置"
+              }
+            ],
+            "id": "menu_system_template",
+            "note": "菜单-装机管理-系统/镜像配置",
+            "title": "系统/镜像配置"
+          },
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "button_hardware_template_create",
+                "note": "按钮-硬件配置-新建",
+                "title": "新建/克隆硬件配置"
+              },
+              {
+                "children": [],
+                "id": "button_hardware_template_update",
+                "note": "按钮-硬件配置-修改",
+                "title": "修改硬件配置"
+              },
+              {
+                "children": [],
+                "id": "button_hardware_template_delete",
+                "note": "按钮-硬件配置-删除",
+                "title": "删除硬件配置"
+              }
+            ],
+            "id": "menu_hardware_template",
+            "note": "菜单-配置管理-硬件配置",
+            "title": "硬件配置"
+          }
+        ],
+        "id": "menu_template_management",
+        "note": "菜单-配置管理",
+        "title": "配置管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "button_approval_idc_abolish",
+            "note": "按钮-审批管理-数据中心裁撤",
+            "title": "数据中心裁撤审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_server_room_abolish",
+            "note": "按钮-审批管理-机房裁撤",
+            "title": "机房裁撤审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_cabinet_offline",
+            "note": "按钮-审批管理-机架下线",
+            "title": "机架下线审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_cabinet_powerOff",
+            "note": "按钮-审批管理-机架关电",
+            "title": "机架关电审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_network_area_offline",
+            "note": "按钮-审批管理-网络区域下线",
+            "title": "网络区域下线审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_move",
+            "note": "按钮-审批管理-物理机搬迁",
+            "title": "物理机搬迁审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_move_download",
+            "note": "按钮-审批管理-物理机搬迁导入模板",
+            "title": "下载物理机搬迁审批导入模板"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_move_import",
+            "note": "按钮-审批管理-导入物理机搬迁",
+            "title": "导入物理机搬迁审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_retirement",
+            "note": "按钮-审批管理-物理机退役",
+            "title": "物理机退役审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_reInstall",
+            "note": "按钮-审批管理-物理机重装",
+            "title": "物理机重装审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_power_off",
+            "note": "按钮-审批管理-物理机关电",
+            "title": "物理机关电审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_restart",
+            "note": "按钮-审批管理-物理机重启",
+            "title": "物理机重启审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_recycle_retire",
+            "note": "按钮-审批管理-物理机回收退役",
+            "title": "物理机回收退役审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_recycle_move",
+            "note": "按钮-审批管理-物理机回收搬迁",
+            "title": "物理机回收搬迁审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_physical_machine_recycle_reInstall",
+            "note": "按钮-审批管理-物理机回收重装",
+            "title": "物理机回收重装审批"
+          },
+          {
+            "children": [],
+            "id": "button_ip_unassign",
+            "note": "按钮-审批管理-IP回收",
+            "title": "IP回收审批"
+          },
+          {
+            "children": [],
+            "id": "button_approval_agree",
+            "note": "按钮-审批管理-审批通过",
+            "title": "审批通过"
+          },
+          {
+            "children": [],
+            "id": "button_approval_disagree",
+            "note": "按钮-审批管理-审批拒绝",
+            "title": "审批拒绝"
+          },
+          {
+            "children": [],
+            "id": "button_approval_revoke",
+            "note": "按钮-审批管理-审批撤销",
+            "title": "审批撤销"
+          }
+        ],
+        "id": "menu_approval",
+        "note": "菜单-审批管理",
+        "title": "审批管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "button_task_pause",
+            "note": "按钮-任务列表-暂停",
+            "title": "暂停"
+          },
+          {
+            "children": [],
+            "id": "button_task_continue",
+            "note": "按钮-任务列表-继续",
+            "title": "继续"
+          },
+          {
+            "children": [],
+            "id": "button_task_delete",
+            "note": "按钮-任务列表-删除",
+            "title": "删除"
+          }
+        ],
+        "id": "menu_task_management",
+        "note": "菜单-任务管理",
+        "title": "任务管理"
+      }
+    ],
+    "id": "",
+    "note": "",
+    "title": "所有权限"
+  },
+  "message": "操作成功",
+  "status": "success"
+}

@@ -1,0 +1,67 @@
+.idcos-puppet {
+    .box {
+        padding: 10px 0 5px;
+
+        > .box-heading {
+            padding: 5px 0 20px;
+            h4{
+                font-size: 15px;
+                font-weight: bold;
+
+                small {
+
+                }
+            }
+        }
+
+        > .box-body {
+        }
+
+        > .box-footer {
+            > .pull-right {
+                > .btn {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    .table {
+        &.table-middle {
+            > thead > tr > th,
+            > tbody > tr > th,
+            > tfoot > tr > th,
+            > thead > tr > td,
+            > tbody > tr > td,
+            > tfoot > tr > td {
+                vertical-align: middle;
+            }
+        }
+
+        th,td,
+        label {
+            font-weight: normal;
+        }
+
+        > tbody > tr > td {
+            > p {
+                margin-bottom: 9px;
+            }
+        }
+    }
+
+    .table > thead > tr > th, .table > thead > tr > td {
+        border-bottom-width: 1px;
+    }
+
+    .modal-content .modal-body {
+        overflow-y: auto;
+    }
+
+    .form-group .form-control,
+    .form-group .io-input,
+    .form-group .io-select,
+    .form-group .submit-button-wrapper {
+        width: 100%!important;
+    }
+}

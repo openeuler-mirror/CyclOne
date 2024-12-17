@@ -1,0 +1,20 @@
+# Don't check auto-generated stuff into git
+coverage
+stats.json
+proxy.json
+
+# Cruft
+.DS_Store
+npm-debug.log
+.idea
+.proxy
+build
+build.tar
+build.zip
+dist
+temp
+.proxy
+yarn-error.log
+*.less.d.ts
+package-lock.json
+node_modules

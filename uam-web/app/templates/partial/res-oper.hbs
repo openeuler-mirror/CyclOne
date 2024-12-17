@@ -1,0 +1,13 @@
+{{!--
+<a type="button" class="io-table__btn io-table__btn-danger" {{action 'sendAction' 'update' record}}>{{io-icon type="edit"}}</a>
+&nbsp;&nbsp;&nbsp;
+<a type="button" class="io-table__btn io-table__btn-danger" {{action 'sendAction' 'delete' record}}>{{io-icon type="delete"}}</a>
+--}}
+
+{{#tool-tips type="bottom" tip="编辑"}}
+    <span {{action 'sendAction' 'update' record}}  class="h4 text-primary" >{{io-icon type="edit"}}</span>
+{{/tool-tips}}
+
+{{#tool-tips type="bottom" tip="删除"}}
+    <span {{action 'sendAction' 'delete' record}}  class="h4 text-danger" >{{io-icon type="delete"}}</span>
+{{/tool-tips}}

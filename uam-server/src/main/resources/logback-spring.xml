@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="logback-base.xml"/>
+    <jmxConfigurator/>
+    <!-- <logger name="org.springframework.web" level="ERROR"/> -->
+
+    <appender name="AUTOMATE_BIZ_DEFAULT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/rbac/rbac-biz-default.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>>${LOG_PATH}/rbac/rbac-biz-default.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="Hibernate" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/rbac/hibernate.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/rbac/hibernate.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SAL_DEBUG_LOGGER_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/rbac/sal-debug.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/rbac/sal-debug.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="dev">
+
+        <logger name="com.idcos.enterprise.biz" additivity="false">
+            <appender-ref ref="AUTOMATE_BIZ_DEFAULT" />
+            <appender-ref ref="ERROR" />
+        </logger>
+
+        <logger name="org.hibernate" additivity="false">
+            <appender-ref ref="Hibernate" />
+            <appender-ref ref="ERROR" />
+        </logger>
+    </springProfile>
+
+        <logger name="SAL_DEBUG_LOGGER" additivity="false">
+            <appender-ref ref="SAL_DEBUG_LOGGER_APPENDER"/>
+        </logger>
+
+</configuration>

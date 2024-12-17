@@ -1,0 +1,31 @@
+.io-table {
+	@content-padding: 47px;
+	padding-top: 11px;
+	.globalSearch{
+		margin-right: @content-padding;
+		margin-bottom: 10px;
+		input {
+			font-size: 14px;
+			font-weight: normal;
+		}
+	}
+	tr th, tr td {
+		font-size: 13px;
+		&:first-child {
+			padding-left: @content-padding;
+		}
+		&:last-child {
+			padding-right: @content-padding;
+		}
+	}
+
+	&__btn {
+		font-size: 20px;
+		&-danger {
+			color: @brand-danger;
+		}
+	}
+	&-body {
+		margin-top: 6px;
+	}
+}

@@ -1,0 +1,54 @@
+id: CloudUamMenu
+title: CloudUam菜单权限
+children:
+  - id: login
+    title: 登录
+    children: []
+  - id: user
+    title: 用户管理
+    children:
+    - id: user.list
+      title: 查看用户列表
+      children: []
+    - id: user.create
+      title: 新建用户
+      children: []
+    - id: user.import
+      title: 导入用户
+      children: []
+    - id: user.export
+      title: 导出用户
+      children: []
+    - id: user.operate
+      title: 用户操作（编辑、删除等）
+      children: []
+    - id: user.deptTree
+      title: 查看部门树
+      children: []
+    - id: user.deptOperate
+      title: 部门操作（编辑、删除等）
+      children: []
+  - id: userGroup
+    title: 用户组管理
+    children:
+    - id: userGroup.list
+      title: 查看用户组列表
+      children: []
+    - id: userGroup.create
+      title: 新建用户组
+      children: []
+    - id: userGroup.operate
+      title: 用户组操作（编辑、删除等）
+      children: []
+  - id: role
+    title: 角色管理
+    children: []
+  - id: permission
+    title: 权限资源管理
+    children: []
+  - id: resource
+    title: 权限资源分配
+    children: []
+  - id: tenant
+    title: 租户管理
+    children: []

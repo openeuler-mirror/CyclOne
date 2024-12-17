@@ -1,0 +1,37 @@
+<div class="inner-app">
+	<div class="inner-app__context-bar context-bar">
+		{{!-- <span class="context-bar-nav-header"> --}}
+			<span class="h4 context-bar__icon" style="margin-left: 15px;">
+				{{#link-to 'dashboard.portalManagement.user'}} {{io-icon type="left"}}{{/link-to}}
+				{{#link-to 'dashboard.portalManagement.user'}}  用户管理 {{/link-to}} / <span>导入用户</span>
+			</span>
+		{{!-- </span> --}}
+	</div>
+	<div class="inner-app__main collapsed">
+		<div class="container-fluid" style="width: 750px; margin: 30px auto 20px;">
+			<div class="row padding0">
+				<div class="col-md-12">
+					{{#common/io-file-upload 
+		                upload="upload" 
+		                autoUpload=false 
+		                showUploadButton=false 
+		                multiple=false}}
+		            {{/common/io-file-upload}} 
+				</div>
+				<div class="col-md-4" style="margin-left:5px; margin-top:7px;">
+					<a href="/portal/user/templete/download">点击下载导入模板</a>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top:20px;">
+				<button  {{action "saveAction"}} class="io-btn io-btn-primary"> {{io-icon type="save"}} 导入预览</button>
+				{{#link-to "dashboard.portalManagement.user.index"}} &nbsp;&nbsp;
+				    <button class="io-btn io-btn-primary"> {{io-icon type="rollback"}} 取消导入 </button>
+                {{/link-to}}
+			</div>
+		</div>
+		<div class="row">
+			
+		</div>
+	</div>
+</div>

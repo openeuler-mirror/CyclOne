@@ -1,0 +1,19 @@
+.inner-app__nav {
+	.io-tree {
+		.io-tree-node {
+			font-size: 14px;
+			background: white;
+			&-active {
+				display: inline-block;
+				width: 93%;
+				padding: 0 5px;
+				color: white;
+				background: @brand-primary;
+				transition: all .2s ease-in-out;
+				&.io-tree-node-leaf {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

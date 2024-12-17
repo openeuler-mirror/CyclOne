@@ -1,0 +1,189 @@
+// 表格调整
+
+// 表格默认用 middle
+@bgHeader: #e5eefb;
+@fontSize: 14px;
+.ant-table-body{
+  //overflow-x: auto;
+  table-layout: fixed;
+}
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+  background-color: @blueDark;
+  border-color: @blueDark;
+}
+.table-controls {
+  > * {
+    padding: 0 7px;
+    border-right: solid 1px #ccc;
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .disabled {
+    color: #c1c1c1;
+    cursor: no-drop;
+  }
+}
+
+.table-controls-test {
+  > * {
+    width: 45px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 3px !important;
+    text-align: center;
+  }
+}
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  max-width: 100px;
+  padding: 14px 8px;
+  box-sizing: border-box;
+  border-right: 1px solid @TableBorder;
+}
+.ant-table-thead > tr > th:nth-child(1),
+.ant-table-tbody > tr > td:nth-child(1) {
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border-left: 1px solid @TableBorder;
+}
+.ant-table-tbody > tr:nth-child(1) > td {
+  border-top: none;
+}
+
+.ant-table-thead > tr > th {
+  // border-bottom: none;
+  word-wrap: break-word;
+}
+.ant-table-tbody {
+  /* 表格的间隔颜色 */
+  tr:nth-of-type(even) {
+    background-color: @TableBodyEven;
+  }
+  /* 当前划过的表格的行的颜色 */
+  tr:hover {
+    background: @TableBodyHover;
+  }
+}
+.ant-table {
+  font-size: 13px;
+  color: #4e5466;
+  .ant-table-thead > tr > th.ant-table-selection-column,
+  .ant-table-tbody > tr > td.ant-table-selection-column {
+    text-align: center;
+    min-width: 35px !important;
+    width: 35px !important;
+  }
+  table {
+    border-radius: 4px 4px 0 0;
+    // border-collapse: collapse;
+  }
+  table.ant-table-fixed {
+    width: 100% !important;
+    .ant-table-thead {
+      tr > th {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .ant-table-header {
+    background-color: @TableHeadBg;
+  }
+  .ant-table-thead > tr > th {
+    background: @TableHeadBg;
+    color: @Title;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+}
+
+// 页码
+
+.ant-pagination {
+  float: right;
+  margin-top: 16px;
+  color: @PaginationFont;
+  font-size: @baseFontSize;
+  margin-bottom: 0px;
+  .ant-select-selection-selected-value {
+    color: @PaginationFont;
+    font-size: @baseFontSize;
+  }
+}
+.ant-pagination-item-active {
+  background-color: @BtnColor;
+  border-color: @BtnColor;
+  color: #fff;
+}
+
+//分页的样式重写
+.ant-pagination-prev a,
+.ant-pagination-next a {
+  border: 1px solid @PaginationBorder;
+  font-size: @baseFontSize;
+  border-radius: 4px;
+  outline: 0;
+  display: block;
+  &:after {
+    zoom: 1;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    font-family: "anticon";
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+  }
+}
+.ant-pagination-simple .ant-pagination-next a,
+.ant-pagination-simple .ant-pagination-prev a {
+  border: 0;
+  height: 24px;
+  line-height: 24px;
+  margin: 0;
+  font-size: 18px;
+}
+.a() {
+  height: 18px;
+  line-height: 18px;
+  margin: 0;
+  font-size: 18px;
+  outline: 0;
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.ant-pagination-item-active {
+  a{
+    color:#fff!important;
+    &:active,&:focus,&:hover,&:visited{
+      color:#fff!important;
+    }
+  }
+}
+
+
+.a-after() {
+  display: block;
+  font-size: @baseFontSize;
+  zoom: 1;
+  height: 18px;
+  line-height: 18px;
+  font-family: "anticon";
+  text-align: center;
+  font-weight: 500;
+}
+.ant-pagination-options-size-changer.ant-select{
+  margin-right: 0;
+}
+.ant-pagination-options-quick-jumper{
+  margin-left: 8px;
+}
+

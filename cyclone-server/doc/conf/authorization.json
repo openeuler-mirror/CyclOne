@@ -1,0 +1,1573 @@
+[
+  {
+    "api": {
+      "desc": "查看数据中心",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/idcs$"
+    },
+    "codes": [
+      "menu_idc",
+      "menu_idc_management"
+    ]
+  },
+  {
+    "api": {
+      "desc": "新增数据中心",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/idcs$"
+    },
+    "codes": [
+      "button_idc_create"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "修改数据中心",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/idcs/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_idc_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改数据中心状态",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/idcs/status$"
+    },
+    "codes": [
+      "button_idc_accepted",
+      "button_idc_abolished",
+      "button_idc_production"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除数据中心",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/idcs/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_idc_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看机房",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms$"
+    },
+    "codes": [
+      "menu_server_room"
+    ]
+  },
+  {
+    "api": {
+      "desc": "新增机房",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms$"
+    },
+    "codes": [
+      "button_server_room_create"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "修改机房",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms$"
+    },
+    "codes": [
+      "button_server_room_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改机房状态",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms/status$"
+    },
+    "codes": [
+      "button_server_room_production",
+      "button_server_room_abolished",
+      "button_server_room_accepted"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除机房",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_server_room_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加载导入机房文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms/upload$"
+    },
+    "codes": [
+      "button_server_room_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机房文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms/imports/previews$"
+    },
+    "codes": [
+      "button_server_room_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机房文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-rooms/imports$"
+    },
+    "codes": [
+      "button_server_room_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看网络区域",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas$"
+    },
+    "codes": [
+      "menu_network_area"
+    ]
+  },
+  {
+    "api": {
+      "desc": "新增网络区域",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas$"
+    },
+    "codes": [
+      "button_network_area_create"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "修改网络区域",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas$"
+    },
+    "codes": [
+      "button_network_area_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改网络区域状态",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas/status$"
+    },
+    "codes": [
+      "button_network_area_production",
+      "button_network_area_offline"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除网络区域",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_network_area_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加载导入导入网络区域文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas/upload$"
+    },
+    "codes": [
+      "button_network_area_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入网络区域文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas/imports/previews$"
+    },
+    "codes": [
+      "button_network_area_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入网络区域文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network-areas/imports$"
+    },
+    "codes": [
+      "button_network_area_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看机架(柜)",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets$"
+    },
+    "codes": [
+      "menu_server_cabinet"
+    ]
+  },
+  {
+    "api": {
+      "desc": "新增机架(柜)",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets$"
+    },
+    "codes": [
+      "button_server_cabinet_create"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "修改机架(柜)",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets$"
+    },
+    "codes": [
+      "button_server_cabinet_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改机架(柜)状态",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/status$"
+    },
+    "codes": [
+      "button_server_cabinet_powerOn",
+      "button_server_cabinet_powerOff",
+      "button_server_cabinet_offline",
+      "button_server_cabinet_enabled"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除机架(柜)",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_server_cabinet_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "机架开电",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/[0-9A-Za-z_]+/power$"
+    },
+    "codes": [
+      "button_server_cabinet_powerOn"
+    ]
+  },
+  {
+    "api": {
+      "desc": "机架关电",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/[0-9A-Za-z_]+/power$"
+    },
+    "codes": [
+      "button_server_cabinet_powerOff"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加载导入机架(柜)文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/upload$"
+    },
+    "codes": [
+      "button_server_cabinet_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机架(柜)文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/imports/previews$"
+    },
+    "codes": [
+      "button_server_cabinet_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机架(柜)文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-cabinets/imports$"
+    },
+    "codes": [
+      "button_server_cabinet_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看机位(U位)",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites$"
+    },
+    "codes": [
+      "menu_server_usite"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增机位(U位)",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites$"
+    },
+    "codes": [
+      "button_server_usite_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改机位(U位)",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites$"
+    },
+    "codes": [
+      "button_server_usite_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除机位(U位)",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_server_usite_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除机位(U位)端口号",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/[0-9A-Za-z_]+/ports$"
+    },
+    "codes": [
+      "button_server_usite_delete_port"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改机位(U位)状态",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/status$"
+    },
+    "codes": [
+      "button_server_usite_status"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加载导入机位(U位)文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/upload$"
+    },
+    "codes": [
+      "button_server_usite_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机位(U位)文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/imports/previews$"
+    },
+    "codes": [
+      "button_server_usite_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机位(U位)文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/imports$"
+    },
+    "codes": [
+      "button_server_usite_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加载导入机位(U位)端口号文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/ports/upload$"
+    },
+    "codes": [
+      "button_server_usite_import_port"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机位(U位)端口号文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/ports/imports/previews$"
+    },
+    "codes": [
+      "button_server_usite_import_port"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入机位(U位)端口号文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/server-usites/ports/imports$"
+    },
+    "codes": [
+      "button_server_usite_import_port"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看库房管理单元",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/store-rooms$"
+    },
+    "codes": [
+      "menu_store_room"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "查看库房管理单元明细",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/store-room/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "menu_store_room"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增库房管理单元",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/store-room$"
+    },
+    "codes": [
+      "button_store_room_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上传导入库房管理单元文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/store-room/upload$"
+    },
+    "codes": [
+      "button_store_room_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入库房管理单元文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/store-room/imports/previews$"
+    },
+    "codes": [
+      "button_store_room_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入库房管理单元",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/store-room/imports$"
+    },
+    "codes": [
+      "button_store_room_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除库房管理单元",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/store-room/[0-9]+$"
+    },
+    "codes": [
+      "button_store_room_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改库房管理单元",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/store-room$"
+    },
+    "codes": [
+      "button_store_room_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "新增虚拟货架",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/virtual-cabinet$"
+    },
+    "codes": [
+      "button_virtual_cabinet_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除虚拟货架",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/virtual-cabinet/[0-9]+$"
+    },
+    "codes": [
+      "button_virtual_cabinet_delete"
+    ]
+  }, 
+  {
+    "api": {
+      "desc": "新增带外管理",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/power$"
+    },
+    "codes": [
+      "button_physical_machine_powerOn",
+      "button_predeploy_physical_machine_powerOn"
+    ]
+  },
+  {
+    "api": {
+      "desc": "带外管理批量PXE重启",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/devices/power/pxe/restart$"
+    },
+    "codes": [
+      "button_physical_machine_networkBoot",
+      "button_predeploy_physical_machine_networkBoot"
+    ]
+  },
+  {
+    "api": {
+      "desc": "带外管理批量重启",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/devices/power/restart$"
+    },
+    "codes": [
+      "button_physical_machine_reBoot",
+      "button_predeploy_physical_machine_reBoot"
+    ]
+  },
+  {
+    "api": {
+      "desc": "带外管理批量关机",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/devices/power$"
+    },
+    "codes": [
+      "button_physical_machine_powerOff",
+      "button_predeploy_physical_machine_powerOff"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改带外用户密码",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/oob/password$"
+    },
+    "codes": [
+      "button_physical_machine_update_oob"
+    ]
+  },
+  {
+    "api": {
+      "desc": "新增物理机",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/collections$"
+    },
+    "codes": []
+  },
+  {
+    "api": {
+      "desc": "加载导入物理机文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/upload$"
+    },
+    "codes": [
+      "button_predeploy_physical_machine_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入物理机文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/imports/previews$"
+    },
+    "codes": [
+      "button_predeploy_physical_machine_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加入物理机文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/imports$"
+    },
+    "codes": [
+      "button_predeploy_physical_machine_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看物理机",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/devices$"
+    },
+    "codes": [
+      "menu_physical_machine"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改物理机",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/device$"
+    },
+    "codes": [
+      "button_physical_machine_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "存量物理机导入",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/stock/upload$"
+    },
+    "codes": [
+      "button_physical_machine_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "存量物理机导入预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/stock/imports/previews$"
+    },
+    "codes": [
+      "button_physical_machine_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "加载存量物理机导入文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/stock//imports$"
+    },
+    "codes": [
+      "button_physical_machine_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上传物理机导入到库房文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/store/upload$"
+    },
+    "codes": [
+      "button_device_store_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "物理机导入到库房预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/store/imports/previews$"
+    },
+    "codes": [
+      "button_device_store_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "物理机导入到库房",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/store/imports$"
+    },
+    "codes": [
+      "button_device_store_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "重新批量纳管带外",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/devices/oob/re-access$"
+    },
+    "codes": [
+      "button_oob_re_access"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上传特殊设备文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/special-devices/upload$"
+    },
+    "codes": [
+      "button_special_device_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "特殊设备预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/special-devices/imports/previews$"
+    },
+    "codes": [
+      "button_special_device_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入特殊设备",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/special-devices/imports$"
+    },
+    "codes": [
+      "button_special_device_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除物理机",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_physical_machine_delete",
+      "button_predeploy_physical_machine_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看订单",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/orders$"
+    },
+    "codes": [
+      "menu_order"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看订单明细",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/order/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "menu_order"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导出订单",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/orders/export$"
+    },
+    "codes": [
+      "menu_order"
+    ]
+  },     
+  {
+    "api": {
+      "desc": "新增订单",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/order$"
+    },
+    "codes": [
+      "button_order_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除订单",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/orders$"
+    },
+    "codes": [
+      "button_order_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改订单状态",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/order/status$"
+    },
+    "codes": [
+      "button_order_cancel",
+      "button_order_confirm"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导出订单",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/orders/export$"
+    },
+    "codes": [
+      "button_order_export"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看设备类型",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/device-categories$"
+    },
+    "codes": [
+      "menu_device_category"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看设备类型明细",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/device-category/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "menu_device_category"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增设备类型",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/device-category$"
+    },
+    "codes": [
+      "button_device_category_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改设备类型",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/device-category$"
+    },
+    "codes": [
+      "button_device_category_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除设备类型",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/device-categories$"
+    },
+    "codes": [
+      "button_device_category_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看网段",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks$"
+    },
+    "codes": [
+      "menu_ip_network"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增网段",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks$"
+    },
+    "codes": [
+      "button_ip_network_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改网段",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks$"
+    },
+    "codes": [
+      "button_ip_network_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除网段",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_ip_network_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上传导入IP网段文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks/upload$"
+    },
+    "codes": [
+      "button_ip_network_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入IP网段文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks/imports/previews$"
+    },
+    "codes": [
+      "button_ip_network_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入IP网段文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/ip-networks/imports$"
+    },
+    "codes": [
+      "button_ip_network_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看IP列表",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/ips$"
+    },
+    "codes": [
+      "menu_ip"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "手动分配IP",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/ips/assigns$"
+    },
+    "codes": [
+      "button_ip_assign"
+    ]
+  },
+  {
+    "api": {
+      "desc": " 手动取消IP分配",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/ips/unassigns$"
+    },
+    "codes": [
+      "button_ip_unassign"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除网络设备",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_network_device_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看网络设备",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices$"
+    },
+    "codes": [
+      "menu_network_device"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增网络设备",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices$"
+    },
+    "codes": [
+      "button_network_device_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "网络设备同步",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices/sync$"
+    },
+    "codes": [
+      "button_network_device_sync"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上传网络设备文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices/upload$"
+    },
+    "codes": [
+      "button_ip_network_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入网络设备文件预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices/imports/previews$"
+    },
+    "codes": [
+      "button_ip_network_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入网络设备文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/network/devices/imports$"
+    },
+    "codes": [
+      "button_ip_network_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上报安装进度",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/installations/progress$"
+    },
+    "codes": []
+  },
+  {
+    "api": {
+      "desc": "查看装机参数",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/devices/settings$"
+    },
+    "codes": [
+      "menu_device_setting"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增装机参数",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/settings$"
+    },
+    "codes": [
+      "button_predeploy_physical_machine_osInstall"
+    ]
+  },
+  {
+    "api": {
+      "desc": "批量重装设备",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/devices/installations/reinstalls$"
+    },
+    "codes": [
+      "button_device_setting_reInstall"
+    ]
+  },
+  {
+    "api": {
+      "desc": "批量取消安装设备",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/devices/installations/cancels$"
+    },
+    "codes": [
+      "button_device_setting_cancelInstall"
+    ]
+  },
+  {
+    "api": {
+      "desc": "批量删除设备装机参数",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/devices/settings$"
+    },
+    "codes": [
+      "button_device_setting_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除硬件模板",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/hardware-templates/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_hardware_template_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改硬件模板",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/hardware-templates$"
+    },
+    "codes": [
+      "button_hardware_template_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看硬件模板",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/hardware-templates$"
+    },
+    "codes": [
+      "menu_hardware_template"
+    ]
+  }, 
+  {
+    "api": {
+      "desc": "新增硬件模板",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/hardware-templates$"
+    },
+    "codes": [
+      "button_hardware_template_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看镜像模板",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/image-templates$"
+    },
+    "codes": [
+      "menu_template_management"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增镜像模板",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/image-templates$"
+    },
+    "codes": [
+      "button_mirror_template_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改镜像模板",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/image-templates$"
+    },
+    "codes": [
+      "button_mirror_template_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除镜像模板",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/image-templates/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_mirror_template_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看系统模板",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/system-templates$"
+    },
+    "codes": [
+      "menu_template_management"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增系统模板",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/system-templates$"
+    },
+    "codes": [
+      "button_system_template_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改系统模板",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/system-templates$"
+    },
+    "codes": [
+      "button_system_template_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除系统模板",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/system-templates/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_system_template_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看巡检任务",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/jobs/inspections$"
+    },
+    "codes": [
+      "menu_inspection"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看巡检详情",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/devices/inspections$"
+    },
+    "codes": [
+      "menu_inspection"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "查看巡检详情",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/devices/inspections/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "menu_inspection"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看设备巡检详情",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/inspections$"
+    },
+    "codes": [
+      "menu_inspection"
+    ]
+  },   
+  {
+    "api": {
+      "desc": "新增巡检任务",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/jobs/inspections$"
+    },
+    "codes": [
+      "button_inspection_addTask",
+      "button_inspection_inspect",
+      "button_inspection_inspect_all"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看任务列表",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/jobs$"
+    },
+    "codes": [
+      "menu_task_management"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "删除目标任务API",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/jobs/[0-9A-Za-z_]+$"
+    },
+    "codes": [
+      "button_task_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "暂停目标任务API",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/jobs/[0-9A-Za-z_]+/pausing$"
+    },
+    "codes": [
+      "button_task_pause"
+    ]
+  },
+  {
+    "api": {
+      "desc": "继续已暂停的目标任务API",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/jobs/[0-9A-Za-z_]+/unpausing$"
+    },
+    "codes": [
+      "button_task_continue"
+    ]
+  },
+  {
+    "api": {
+      "desc": "为目标设备生成PXE文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/pxe$"
+    },
+    "codes": []
+  },
+  {
+    "api": {
+      "desc": "生成centos6 pxe模板",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/centos6/uefi/pxe$"
+    },
+    "codes": []
+  },
+  {
+    "api": {
+      "desc": "发起数据中心裁撤审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/idc/abolish$"
+    },
+    "codes": [
+      "button_approval_idc_abolish"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起机房裁撤审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/server-room/abolish$"
+    },
+    "codes": [
+      "button_approval_server_room_abolish"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起机架关电审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/server-cabinets/poweroffs$"
+    },
+    "codes": [
+      "button_approval_cabinet_powerOff"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起机架下线审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/server-cabinets/offlines$"
+    },
+    "codes": [
+      "button_approval_cabinet_offline"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起网络区域下线审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/network-area/offline$"
+    },
+    "codes": [
+      "button_approval_network_area_offline"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起物理机搬迁审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/migrations$"
+    },
+    "codes": [
+      "button_approval_physical_machine_move"
+    ]
+  },
+  {
+    "api": {
+      "desc": "上传物理机搬迁审批文件",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/migrations/upload$"
+    },
+    "codes": [
+      "button_approval_physical_machine_move_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入物理机搬迁审批预览",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/migrations/imports/previews$"
+    },
+    "codes": [
+      "button_approval_physical_machine_move_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "导入物理机搬迁审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/migrations/imports$"
+    },
+    "codes": [
+      "button_approval_physical_machine_move_import"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起物理机退役审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/retirements$"
+    },
+    "codes": [
+      "button_approval_physical_machine_retirement"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起物理机重装审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/os-reinstallations$"
+    },
+    "codes": [
+      "button_approval_physical_machine_reInstall"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起物理机关电审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/device/poweroff$"
+    },
+    "codes": [
+      "button_approval_physical_machine_power_off"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起物理机重启审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/device/restart$"
+    },
+    "codes": [
+      "button_approval_physical_machine_restart"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起物理机回收审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/devices/recycle$"
+    },
+    "codes": [
+      "button_approval_physical_machine_recycle_retire",
+      "button_approval_physical_machine_recycle_move",
+      "button_approval_physical_machine_recycle_reInstall"
+    ]
+  },
+  {
+    "api": {
+      "desc": "发起IP回收审批",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/approvals/ip/unassign$"
+    },
+    "codes": [
+      "button_ip_unassign"
+    ]
+  },
+  {
+    "api": {
+      "desc": "归还设备持有的DHCP IP令牌",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/devices/[0-9A-Za-z_]+/limiters/tokens$"
+    },
+    "codes": [
+      "menu_device_setting"
+    ]
+  },
+  {
+    "api": {
+      "desc": "一键归还所有设备持有的DHCP IP令牌",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/devices/limiters/tokens$"
+    },
+    "codes": [
+      "menu_device_setting"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看装机参数规则",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/device-setting-rules$"
+    },
+    "codes": [
+      "menu_device_setting_rule"
+    ]
+  },  
+  {
+    "api": {
+      "desc": "新增装机参数规则",
+      "method": "POST",
+      "uri_regexp": "^/api/cloudboot/v1/device-setting-rules$"
+    },
+    "codes": [
+      "button_device_setting_rule_create"
+    ]
+  },
+  {
+    "api": {
+      "desc": "修改装机参数规则",
+      "method": "PUT",
+      "uri_regexp": "^/api/cloudboot/v1/device-setting-rules$"
+    },
+    "codes": [
+      "button_device_setting_rule_update"
+    ]
+  },
+  {
+    "api": {
+      "desc": "删除装机参数规则",
+      "method": "DELETE",
+      "uri_regexp": "^/api/cloudboot/v1/device-setting-rules$"
+    },
+    "codes": [
+      "button_device_setting_rule_delete"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看操作记录",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/operate/log$"
+    },
+    "codes": [
+      "menu_audit_log"
+    ]
+  },
+  {
+    "api": {
+      "desc": "查看API调用记录",
+      "method": "GET",
+      "uri_regexp": "^/api/cloudboot/v1/api/log$"
+    },
+    "codes": [
+      "menu_audit_api"
+    ]
+  }    
+]

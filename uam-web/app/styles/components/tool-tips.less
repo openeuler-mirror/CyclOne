@@ -1,0 +1,140 @@
+.io-tooltips {
+  position: relative;
+  display: inline-block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .9;
+  margin-right: 6px;
+}
+
+.io-tooltips-hidden .io-tooltips-content {
+  display: none;
+}
+
+.io-tooltips-content {
+  position: absolute;
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: .9;
+  padding: 5px 0 8px;
+  z-index: 10;
+}
+
+.io-tooltips-placement-top,.io-tooltips-placement-topLeft,.io-tooltips-placement-topRight {
+  padding: 5px 0 9px;
+}
+
+.io-tooltips-placement-right,.io-tooltips-placement-rightBottom,.io-tooltips-placement-rightTop {
+  padding: 0 5px 0 9px;
+}
+
+.io-tooltips-placement-bottom,.io-tooltips-placement-bottomLeft,.io-tooltips-placement-bottomRight {
+  padding: 9px 0 5px;
+}
+
+.io-tooltips-placement-left,.io-tooltips-placement-leftBottom,.io-tooltips-placement-leftTop {
+  padding: 0 9px 0 5px;
+}
+
+.io-tooltips-inner {
+  max-width: 250px;
+  min-width: 68px;
+  padding: 8px 10px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #373737;
+  border-radius: 3px;
+  box-shadow: 0 0 4px rgba(0,0,0,.17);
+  min-height: 34px;
+  z-index: 9;
+}
+
+.io-tooltips-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.io-tooltips-placement-top .io-tooltips-arrow,.io-tooltips-placement-topLeft .io-tooltips-arrow,.io-tooltips-placement-topRight .io-tooltips-arrow {
+  bottom: 4px;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #373737;
+}
+
+.io-tooltips-placement-top .io-tooltips-arrow {
+  left: 50%;
+}
+
+.io-tooltips-placement-topLeft .io-tooltips-arrow {
+  left: 15%;
+}
+
+.io-tooltips-placement-topRight .io-tooltips-arrow {
+  right: 15%;
+}
+
+.io-tooltips-placement-right .io-tooltips-arrow,.io-tooltips-placement-rightBottom .io-tooltips-arrow,.io-tooltips-placement-rightTop .io-tooltips-arrow {
+  left: -4px;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #373737;
+}
+
+.io-tooltips-placement-right .io-tooltips-arrow {
+  top: 46%;
+}
+
+.io-tooltips-placement-rightTop .io-tooltips-arrow {
+  top: 25%;
+  margin-top: 0;
+}
+
+.io-tooltips-placement-rightBottom .io-tooltips-arrow {
+  bottom: 25%;
+}
+
+.io-tooltips-placement-left .io-tooltips-arrow,.io-tooltips-placement-leftBottom .io-tooltips-arrow,.io-tooltips-placement-leftTop .io-tooltips-arrow {
+  right: -4px;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #373737;
+}
+
+.io-tooltips-placement-left .io-tooltips-arrow {
+  top: 46%;
+}
+
+.io-tooltips-placement-leftTop .io-tooltips-arrow {
+  top: 25%;
+  margin-top: 0;
+}
+
+.io-tooltips-placement-leftBottom .io-tooltips-arrow {
+  bottom: 25%;
+}
+
+.io-tooltips-placement-bottom .io-tooltips-arrow,.io-tooltips-placement-bottomLeft .io-tooltips-arrow,.io-tooltips-placement-bottomRight .io-tooltips-arrow {
+  top: 0;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #373737;
+}
+
+.io-tooltips-placement-bottom .io-tooltips-arrow {
+  left: 50%;
+}
+
+.io-tooltips-placement-bottomLeft .io-tooltips-arrow {
+  left: 15%;
+}
+
+.io-tooltips-placement-bottomRight .io-tooltips-arrow {
+  right: 15%;
+}

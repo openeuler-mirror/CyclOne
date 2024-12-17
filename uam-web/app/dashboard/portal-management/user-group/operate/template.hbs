@@ -1,0 +1,185 @@
+<div class="inner-app">
+	<div class="inner-app__context-bar context-bar">
+		<span class="h4 context-bar__icon" style="margin-left: 15px;">
+			{{#link-to "dashboard.portalManagement.userGroup"}}<i class="ioicon ioicon-left"></i>用户组管理{{/link-to}} &nbsp;/ {{#if userGroupForm.name}}{{userGroupForm.name}}{{else}}新建用户组{{/if}}
+		</span>
+	</div>
+	
+	<div class="inner-app__main collapsed">
+		<div class="row" style="padding: 20px;">
+			<div class="io-steps io-steps-horizontal io-steps-label-horizontal" style="display: inline-block; text-align: center; padding-left: 100px;">
+				{{#each userGroupSteps as |step|}}
+				<div class="io-steps-item io-steps-status-{{step.status}}" style="margin-right: -18.4492px; width: 246px; text-align: left; cursor: pointer;" {{action "selectTabAction" step}}>
+					{{#unless step.last}}
+					<div class="io-steps-tail"> <i> </i> </div>
+					{{/unless}}
+					<div class="io-steps-step">
+						<div class="io-steps-head">
+							<div class="io-steps-head-inner">
+								{{#if (eq step.status "finish")}}
+								<span class="io-steps-icon ioicon ioicon-check">
+								</span>
+								{{else}}
+								<i class='idcicon idcicon-{{step.icon}}'></i>
+								{{/if}}
+							</div>
+						</div>
+						<div class="io-steps-main">
+							<div class="io-steps-title">
+								{{step.title}}
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane {{if (eq '用户组信息' currentTab) 'active'}}" id="info">
+				{{#io-form submitForm="saveUesrGroupAction" class="panel form-horizontal"}}
+				<div class="panel-body row" style="width: 800px; margin: auto;">
+					{{#io-form-group labelColClass="col-sm-8" inputColClass="col-sm-16" required=true help="" label="用户组名称：" }}
+					{{io-input value=userGroupForm.name class="pull-left" type="text" required=true data-error="请填写用户组名称" }}
+					{{/io-form-group}}
+
+					{{#io-form-group labelColClass="col-sm-8" inputColClass="col-sm-16" required=false help="" label="类型(可选)：" }}
+						{{#io-select value=userGroupForm.type placeholder="默认" width='100%'}}
+							{{#each model.groupTypeTree as |queryType|}}
+								{{#io-option value=queryType.code}}{{queryType.value}}{{/io-option}}
+							{{/each}}
+						{{/io-select}}
+					{{/io-form-group}}
+
+					{{#io-form-group labelColClass="col-sm-8" inputColClass="col-sm-16" help="" label="描述信息(可选)：" }}
+					{{io-textarea style="font-size:10px" class="pull-left" value=userGroupForm.remark rows="6"}}
+					{{/io-form-group}}
+				</div>
+				{{/io-form}}
+				<div class="row" style="text-align:center;">
+					<button  {{action "saveUesrGroupAction"}} class="io-btn io-btn-primary"> {{io-icon type="save"}} 保存</button>
+					<button  {{action "stepAction" 2}} class="io-btn io-btn-ghost">下一步 {{io-icon type="right"}}</button>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane {{if (eq '角色清单' currentTab) 'active'}}" id="role">
+				<div class="container-fluid">
+					<div class="row padding0" style="padding: 30px; width: 770px; margin: auto;">
+						{{io-transfer
+						dataSource=model.dataSource
+						targetValues=model.selectedRoleList}}
+					</div>
+					<br>
+					<div class="row" style="text-align:center;">
+						<button  {{action "saveGroupRoleAction"}} class="io-btn io-btn-primary"> {{io-icon type="save"}} 保存</button>
+						<button  {{action "stepAction" 1}} class="io-btn io-btn-ghost">{{io-icon type="left"}} 上一步 </button>
+						<button  {{action "stepAction" 3}} class="io-btn io-btn-ghost">下一步 {{io-icon type="right"}}</button>
+					</div>
+					<br><br>
+				</div>
+			</div>
+			
+			<div role="tabpanel" class="tab-pane {{if (eq '用户清单' currentTab) 'active'}}" id="user">
+				<div class="container-fluid user-list">
+					<div class="input-group pull-right">
+						{{!-- <span class="input-group-addon "><i class="ioicon ioicon-search"></i></span> --}}
+						{{io-input	class="col-24 pull-right" value=model.queryParam type="text"  placeholder="请输入查询条件" }}
+					</div>
+					<div class="user-list-selectbox">
+						<div class="col-sm-5 user-list-selectbox__menu">
+							{{#if model.deptTree}}
+							{{io-tree
+							treeNodeIcon='idcicon idcicon-build'
+							treeNodeTemplate='partial/tree-node-with-icon'
+							model=model.deptTree
+							selected=selected
+							onSelectNode='onSelectedFolderNode'
+							}}
+							{{/if}}
+						</div>
+						
+						<div class="col-sm-19 user-list-selectbox__content">
+							<table class="table">
+								<!--<colgroup>
+									<col style="width: 150px;"/>
+									<col style="width: 25%;"/>
+									<col style="width: 25%;"/>
+									<col/>
+									</colgroup>-->
+								<thead>
+									<tr>
+										<th>
+											<span {{action "checkBoxClick"}} class="io-checkbox {{if model.AllChecked 'io-checkbox-checked'}}">
+												<span class="io-checkbox-inner"></span>
+											</span>
+										</th>
+										<th>登录名</th>
+										<th>姓名</th>
+										{{#if (eq true model.ifTenant)}}
+										<th>租户</th>
+										{{/if}}
+										{{!-- <th>职位</th> --}}
+										<th>部门</th>
+									</tr>
+								</thead>
+							</table>
+							<div class="table-body-wrapper">
+								<table class="table">
+									<!--<colgroup>
+									<col style="width: 150px;"/>
+									<col style="width: 25%;"/>
+									<col style="width: 25%;"/>
+									<col/>
+									</colgroup>-->
+									<tbody>
+									    {{!-- {{log model.users}} --}}
+										{{#each model.users as |user index|}}
+										<tr>
+											<td > {{io-checkbox checked=user.checked}}</td>
+											<td>{{user.loginId}}</td>
+											<td>{{user.name}}</td>
+											{{#if (eq true model.ifTenant)}}
+											<td>{{user.tenantId}}</td>
+											{{/if}}
+											{{!-- <td>{{user.title}}</td> --}}
+											<td>{{user.deptName}}</td>
+										</tr>
+										{{/each}}
+									</tbody>
+								</table>
+								{{#unless model.users}}
+								<p class="empty">
+									当前列表为空，请选择左侧部门信息
+								</p>
+								{{/unless}}
+							</div>
+							<div class="row">
+								{{io-pagination change="pageClick" count=model.meta.totalPage current=model.meta.page}}
+							</div>
+						</div>
+					</div>
+					<div class="user-list-selected">
+						<h3>已选择用户 -- {{model.selUsersLength}}个：</h3>
+						<p>
+							{{#each model.selUsers  as | user|}}
+							<span class="io-tag">
+								{{#if user.name}}
+								<span class="io-tag-text">{{user.name}}</span>
+								{{else}}
+								<span class="io-tag-text">{{user.name}}</span>
+								{{/if}}
+								<i  {{action "removeUserAction" user}}class="ioicon ioicon-cross"></i>
+							</span>
+							{{/each}}
+						</p>
+					</div>
+				</div>
+				<br>
+				<div class="row" style="text-align:center;">
+					<button  {{action "saveGroupUserAction"}} class="io-btn io-btn-primary"> {{io-icon type="save"}} 保存</button>
+					<button {{action "stepAction" 2}} class="io-btn io-btn-ghost">{{io-icon type="left"}} 上一步 </button>
+					
+				</div>
+				<br><br><br>
+			</div>
+		</div>
+	</div>
+</div>

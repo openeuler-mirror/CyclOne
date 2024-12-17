@@ -1,0 +1,86 @@
+/**
+ * application common
+ */
+html, html body, body > div.ember-view{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #CED2DB; //@brand-background-color;
+    font-size: 14px;
+	font-family: Arial,"Microsoft YaHei", "微软雅黑",  sans-serif;
+    overflow: hidden;
+}
+
+@media screen and (min-width:~'0\0') {
+	body {
+	    letter-spacing: .09em;
+	}
+}
+
+canvas, iframe{
+	border: none;
+	outline: none;
+}
+
+.scroll {
+	overflow: auto;
+	&-y {
+		overflow-y: auto;
+	}
+	&-x {
+		overflow-x: auto;
+	}
+}
+
+/**
+ * modal
+ */
+.modal-dialog {
+	margin-top: 10vh;
+	.nav-tabs {
+		padding-top: 15px;
+	}
+	.modal-header {
+		.close {
+		    color: white;
+		    opacity: .8;
+		}
+	}
+	.modal-content .modal-body{
+		min-height: 30vh;
+		//max-height: 65vh;
+	}
+}
+
+.io-table th {
+	background: #F6F7FA;
+}
+
+.bg-primary {
+	background: #555F74;
+}
+
+
+/**
+ * font-size 调整
+ */
+.io-btn, .btn, .panel-title {
+	font-size: 14px;
+	font-weight: bold;
+}
+label, input, td, th, .form-control {
+	font-size: 14px;
+}
+.form-group label {
+	font-weight: normal;
+}
+
+
+.io-table table {
+	overflow: visible;
+}
+
+.io-select-dropdown-menu-item-tenant li {
+    padding: 0px 15px
+}

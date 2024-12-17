@@ -1,0 +1,86 @@
+.app-card-container {
+	text-align: center;
+	padding: 10px;
+	display: inline-block;
+	float: left;
+	.clearfix;
+	.app-card {
+		text-align: left;
+		display: inline-block;
+		background: white;
+		height: 380px;
+		// max-width: 100%;
+		max-width: 330px;
+		border: 1px solid #DBDBDB;
+		box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.08);
+		padding: 44px 33px 33px 33px;
+		position: relative;
+		&__title {
+			font-weight: bold;
+			font-size: 16px;
+		}
+
+		&__meta {
+			margin: 20px 0 50px;
+			position: relative;
+			>.modify-meta-btn {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			li {
+				color: #AAAFBC;
+				margin-bottom: 5px;
+				height: 20px;
+			}
+		}
+		&__btn-group {
+			width: 130%;
+			margin-left: -15%;
+			text-align: center;
+			.io-btn {
+				border-color: @brand-primary;
+				color: @brand-primary;
+				&:hover, &:active {
+					background: @brand-primary;
+					color: white;
+				}
+			}
+		}
+
+		&__primary-btn {
+			margin-top: 25px;
+			text-align: center;
+			.io-btn {
+				border-radius: 30px;
+				padding: 5px 30px;
+			}
+		}
+
+		&.selected {
+			.cornel-label {
+				border-color: @brand-success;
+				color: white;
+			}
+		}
+
+		&-empty {
+			text-align: center;
+			>i {
+				font-size: 180px;
+				color: #CDCFD4;
+				margin-bottom: 25px;
+			}
+			.io-btn {
+				border-color: @brand-primary;
+				color: @brand-primary;
+				&:hover, &:active {
+					background: @brand-primary;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+

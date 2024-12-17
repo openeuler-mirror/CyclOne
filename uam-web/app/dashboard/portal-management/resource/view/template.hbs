@@ -1,0 +1,32 @@
+<div class="inner-app">
+	<div class="inner-app__context-bar context-bar">
+		<span class="h4 context-bar__icon" style="margin-left: 15px;">
+			{{#link-to "dashboard.portalManagement.resource"}}<i class="ioicon ioicon-left"></i> 权限资源管理&nbsp;    {{/link-to}} / {{#if roleForm.name}} {{roleForm.name}}{{else}}{{resForm.name}}{{/if}}
+		</span>
+	</div>
+	<div class="inner-app__main collapsed">
+		<div class="row" style="padding: 20px;">
+			{{#if resForm}}
+			{{#io-form submitForm="saveResAction" class="panel form-horizontal" readonly=model.readOnly}}
+			<div class="panel-body row"style="width:800px; margin:auto;">
+				{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="权限资源编码：" }}
+				{{io-input value=resForm.code type="text" data-error="请填写应用名称" }}
+				{{/io-form-group}}
+				{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="权限资源名称：" }}
+				{{io-input value=resForm.name type="text" data-error="请填写应用名称" }}
+				{{/io-form-group}}
+				{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="权限资源URL：" }}
+				{{io-input value=resForm.url type="text" data-error="请填写应用名称" }}
+				{{/io-form-group}}
+				{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="系统名称（appId）：" }}
+				{{io-input value=resForm.appId type="text" data-error="请填写应用名称" }}
+				{{/io-form-group}}
+				{{#io-form-group labelColClass="col-md-8" inputColClass="col-md-16" help="" label="权限资源备注：" }}
+				{{io-textarea style="font-size:10px" value=resForm.remark rows="6"}}
+				{{/io-form-group}}
+			</div>
+			{{/io-form}}
+			{{/if}}
+		</div>
+	</div>
+</div>

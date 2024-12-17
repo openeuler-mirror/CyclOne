@@ -1,0 +1,30 @@
+<div class="inner-app">
+    <div class="inner-app__context-bar context-bar">
+        {{!-- <span class="context-bar-nav-header"> --}}
+		{{#link-to 'dashboard.portalManagement.user'}} {{io-icon type="left"}}{{/link-to}}
+        {{#link-to 'dashboard.portalManagement.user'}}  用户管理 {{/link-to}} / <span>导入用户预览</span>
+
+
+        <span class="context-bar__right-button-group pull-right">
+        <button  {{action "saveAction"}} class="io-btn io-btn-primary"> {{io-icon type="save"}} 导入有效用户</button>
+        {{#link-to "dashboard.portalManagement.user.import"}} &nbsp;&nbsp;
+            <button class="io-btn io-btn-primary"> {{io-icon type="rollback"}}重新导入 </button>
+        {{/link-to}}
+        </span>
+    </div>
+
+    <div class="inner-app__main collapsed">
+        {{#if model.columns}}
+            {{io-table
+            columns=model.columns
+            showIndexNumber=true
+            showGlobalFilter=false
+            indexNumberBase=model.indexNumber
+            saveAction = "saveAction"
+            pageSize=100000
+            data=model.users}}
+        {{/if}}
+    </div>
+
+</div>
+

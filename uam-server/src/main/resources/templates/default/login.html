@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>单点登录系统</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/public/assets/bootstrap.css"/>
+    <link rel="stylesheet" href="/public/assets/app.css"/>
+    <style type="text/css">
+        .swal-button {
+            padding: 7px 19px;
+            border-radius: 2px;
+            background-color: #37a5fa;
+            font-size: 12px;
+            border: 1px solid #3e549a;
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .layui-layer-title {
+            display: none !important;
+        }
+
+        .layui-layer-setwin {
+            display: none !important;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="login">
+    <div class="overlay">
+        <div class="login-panel-wrapper">
+            <div class="login-panel left">
+                <div class="wrapper">
+                    <div class="left-panel-logo">
+                        <img src="/public/img/login/logo.png" width="320px" alt="统一认证系统"/>
+                    </div>
+                </div>
+            </div>
+            <div class="login-panel right">
+                <div class="login-body">
+                    <div class="login-body-banner">
+                        <strong style="font-size: 20px">用户登录</strong>
+                    </div>
+                    <div class="login-content">
+                        <form id="user" method="POST">
+                            <div class="form-group clearfix">
+                                <i class="user-icon"></i>
+                                <input id="loginName" type="text" class="form-control"
+                                    placeholder="您的用户名"
+                                    name="loginName"/><span></span>
+                            </div>
+                            <div class="form-group clearfix">
+                                <i class="pwd-icon"></i>
+                                <input id="password" type="password" class="form-control"
+                                    placeholder="PIN+TOKEN"
+                                    name="password"/><span></span>
+                            </div>
+                            <div class="forget-helper">
+                                <button id="login" class="btn submit">
+                                    登录
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/public/assets/jquery.js"></script>
+<script type="text/javascript" src="/public/assets/bootstrap.js"></script>
+<script type="text/javascript" src="/public/assets/layer/layer.js"></script>
+
+<script type="text/javascript" src="/public/assets/crypto/crypto-js.js"></script>
+
+<script th:inline="javascript">
+    var isMultiTenant = [[${isMultiTenant}]];
+    var decryptKey = [[${decryptKey}]];
+    var customer = [[${customer}]];
+    $(function () {
+        console.log("isMultiTenant： " + isMultiTenant);
+
+        $("#login").click(function () {
+            $("#loginName").blur();
+            $("#password").blur();
+
+            //认证回调地址验证
+            var url = window.location.href;
+            if (url.indexOf("authCallbackUrl") === -1) {
+                alertInfo("回调地址不能为空，请确认");
+                return false;
+            } else if (url.split("authCallbackUrl=")[1] === "") {
+                swal("回调地址不能为空，请确认");
+                return false;
+            }
+
+
+            //验证用户名和密码不能为空
+            var loginName = $("#loginName").val();
+            var password = $("#password").val();
+            var loginId;
+            var tenantId;
+            if (loginName === "") {
+                alertInfo("登录帐号不能为空，请确认")
+                return false;
+            }
+            if (password === "") {
+                alertInfo("密码不能为空，请确认")
+                return false;
+            }
+
+            if (isMultiTenant === true) {
+                //校验用户名格式，必须是xxx@czbank格式
+                if (loginName.indexOf("@") == -1) {
+                    alertInfo("用户名需包含@");
+                    return false;
+                }
+                var loginArray = loginName.split("@");
+                if (loginArray[1] == '') {
+                    alertInfo("用户名格式为:xxx@czbank；请重新填写");
+                    return false;
+                }
+                loginId = loginArray[0];
+                tenantId = loginArray[1];
+            } else {
+                loginId = loginName;
+                tenantId = "default";
+            }
+
+            var dat = {
+                "tenantId": tenantId,
+                "loginId": loginId,
+                "password": encryptByDESModeEBC(password)
+            };
+            var json = JSON.stringify(dat);
+            $.ajax({
+                type: "POST",
+                url: "/sso/login?customer=" + customer,
+                data: json,
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                timeout: 3000,       // 3s
+                success: function (data) {
+                    if (data.status == "SUCCESS") {
+                        //验证成功，则带着token进行跳转
+                        var href = decodeURIComponent(url.split("authCallbackUrl=")[1]);
+                        if (href.indexOf("?") === -1) {
+                            window.location.href = href + "?" + data.content;
+                        } else {
+                            var hre = (href + "&amp;" + data.content).replace("amp;", "");
+                            window.location.href = hre;
+                        }
+                    } else {
+                        //错误给出错误提示信息
+                        alertInfo(data.message);
+                    }
+
+                },
+                error: function (err) {
+                    alert(err);
+                }
+            });
+
+            //禁用按钮的提交
+            return false;
+        });
+
+        //错误提示框
+        function alertInfo(info) {
+            layer.alert(info, {
+                area: '400px'
+            })
+        }
+
+
+        function encryptByDESModeEBC(password) {
+            var keyHex = CryptoJS.enc.Utf8.parse(decryptKey);
+            var encrypted = CryptoJS.DES.encrypt(password, keyHex, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return encrypted.toString();
+        }
+
+
+        function decryptByDESModeEBC(encrypt) {
+            var keyHex = CryptoJS.enc.Utf8.parse(decryptKey);
+            var decrypted = CryptoJS.DES.decrypt(
+                encrypt, keyHex, {
+                    mode: CryptoJS.mode.ECB,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+            var result_value = decrypted.toString(CryptoJS.enc.Utf8);
+            return result_value;
+        }
+
+    });
+
+
+</script>
+</body>
+
+</html>

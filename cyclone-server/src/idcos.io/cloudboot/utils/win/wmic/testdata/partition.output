@@ -1,0 +1,8 @@
+
+C:\firstboot>wmic partition where Index=0 get Size /value
+
+
+
+Size=367001600
+
+

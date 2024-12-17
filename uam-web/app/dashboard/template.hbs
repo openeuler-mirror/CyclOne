@@ -1,0 +1,64 @@
+<div class="app-body">
+    <div class="app-body__menu" style="top: 0;width:170px;">
+        {{#io-menu mode="inline" style="width: 170px;"}}
+
+        {{#if (permission-check model.permissions "user")}}
+            {{#io-menu-item selected=(eq activeMenu 'user')}}
+            <a  href="" {{action "linkToAction" 'user' }}>
+                <i class="idcicon idcicon-usermanager"></i>
+                用户管理 
+            </a>
+            {{/io-menu-item}}
+        {{/if}}
+
+        {{#if (permission-check model.permissions "userGroup")}}
+            {{#io-menu-item selected=(eq activeMenu 'userGroup')}}
+            <a  href="" {{action "linkToAction" 'userGroup' }}>
+                <i class="idcicon idcicon-usergroup"></i>
+                用户组管理
+            </a>
+            {{/io-menu-item}}
+        {{/if}}
+        
+        {{#if (permission-check model.permissions "role")}}
+            {{#io-menu-item  selected=(eq activeMenu 'role')}}
+            <a  href="" {{action "linkToAction" 'role'   }}>
+                <i class="idcicon idcicon-rolemanager"></i>
+                角色管理
+            </a>
+            {{/io-menu-item}}
+        {{/if}}
+
+        {{#if (permission-check model.permissions "resource")}}
+            {{#io-menu-item selected=(eq activeMenu 'resource')}}
+            <a  href="" {{action "linkToAction" 'resource'  }}>
+                <i class="idcicon-permissionmanager idcicon"></i>
+                权限资源管理
+            </a>
+            {{/io-menu-item}}
+        {{/if}}
+
+        {{#if (permission-check model.permissions "permission")}}
+            {{#io-menu-item  selected=(eq activeMenu 'permission')}}
+            <a  href="" {{action "linkToAction" 'permission'  }}>
+                <i class="idcicon idcicon-permissiondistribution"></i>
+                权限资源分配
+            </a>
+            {{/io-menu-item}}
+        {{/if}}
+        
+        {{#if (permission-check model.permissions "tenant")}}
+            {{#io-menu-item  selected=(eq activeMenu 'tenant')}}
+            <a  href="" {{action "linkToAction" 'tenant'  }}>
+                <i class="idcicon idcicon-permissiondistribution"></i>
+                租户管理
+            </a>
+            {{/io-menu-item}}
+        {{/if}}
+
+        {{/io-menu}}
+    </div>
+    <div class="app-body__main clearfix" style="left:170px;">
+        {{outlet}}
+    </div>
+</div>

@@ -1,0 +1,6 @@
+${AnsiColor.BRIGHT_YELLOW}   ██████╗██╗      ██████╗ ██╗   ██╗██████╗  ${AnsiColor.BRIGHT_RED} ██╗   ██╗ █████╗ ███╗   ███╗
+${AnsiColor.BRIGHT_YELLOW}  ██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗ ${AnsiColor.BRIGHT_RED} ██║   ██║██╔══██╗████╗ ████║
+${AnsiColor.BRIGHT_YELLOW}  ██║     ██║     ██║   ██║██║   ██║██║  ██║ ${AnsiColor.BRIGHT_RED} ██║   ██║███████║██╔████╔██║
+${AnsiColor.BRIGHT_YELLOW}  ██║     ██║     ██║   ██║██║   ██║██║  ██║ ${AnsiColor.BRIGHT_RED} ██║   ██║██╔══██║██║╚██╔╝██║
+${AnsiColor.BRIGHT_YELLOW}  ╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝ ${AnsiColor.BRIGHT_RED} ╚██████╔╝██║  ██║██║ ╚═╝ ██║
+${AnsiColor.BRIGHT_YELLOW}   ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝  ${AnsiColor.BRIGHT_RED}  ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝ ${AnsiColor.BRIGHT_BLUE}server v2.0

@@ -1,0 +1,210 @@
+{
+  "content": {
+    "children": [
+      {
+        "children": [],
+        "id": "menu_home",
+        "note": "菜单-概览",
+        "title": "概览"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "menu_idc",
+            "note": "菜单-数据中心管理-数据中心",
+            "title": "数据中心"
+          },
+          {
+            "children": [],
+            "id": "menu_server_room",
+            "note": "菜单-数据中心管理-机房",
+            "title": "机房"
+          },
+          {
+            "children": [],
+            "id": "menu_network_area",
+            "note": "菜单-数据中心管理-网络区域",
+            "title": "网络区域"
+          },
+          {
+            "children": [],
+            "id": "menu_server_cabinet",
+            "note": "菜单-数据中心管理-机架",
+            "title": "机架"
+          },
+          {
+            "children": [],
+            "id": "menu_server_usite",
+            "note": "菜单-数据中心管理-机位",
+            "title": "机位"
+          },
+          {
+            "children": [],
+            "id": "menu_store_room",
+            "note": "菜单-数据中心管理-库房",
+            "title": "库房"
+          }
+        ],
+        "id": "menu_idc_management",
+        "note": "菜单-数据中心管理",
+        "title": "数据中心管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "menu_network_device",
+            "note": "菜单-网络管理-网络设备",
+            "title": "网络设备"
+          },
+          {
+            "children": [],
+            "id": "menu_ip_network",
+            "note": "菜单-网络管理-IP网段",
+            "title": "IP网段"
+          },
+          {
+            "children": [],
+            "id": "menu_ip",
+            "note": "菜单-网络管理-IP分配",
+            "title": "IP分配"
+          }
+        ],
+        "id": "menu_network_management",
+        "note": "菜单-网络管理",
+        "title": "网络管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "menu_physical_machine",
+            "note": "菜单-物理机管理-物理机列表",
+            "title": "物理机列表"
+          },
+          {
+            "children": [],
+            "id": "menu_special_device",
+            "note": "菜单-物理机管理-特殊设备列表",
+            "title": "特殊设备列表"
+          },
+          {
+            "children": [],
+            "id": "menu_oob_info",
+            "note": "菜单-物理机管理-带外信息",
+            "title": "带外信息"
+          },
+          {
+            "children": [],
+            "id": "menu_predeploy_physical_machine",
+            "note": "菜单-物理机管理-待部署物理机",
+            "title": "待部署物理机"
+          },
+          {
+            "children": [],
+            "id": "menu_device_setting",
+            "note": "菜单-物理机管理-部署列表",
+            "title": "部署列表"
+          },
+          {
+            "children": [],
+            "id": "menu_device_setting_rule",
+            "note": "菜单-物理机管理-装机参数规则列表",
+            "title": "装机参数规则列表"
+          },          
+          {
+            "children": [],
+            "id": "menu_inspection",
+            "note": "菜单-物理机管理-硬件巡检",
+            "title": "硬件巡检"
+          }
+        ],
+        "id": "menu_physical_machine_management",
+        "note": "菜单-物理机管理",
+        "title": "物理机管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "menu_order",
+            "note": "菜单-订单管理-订单列表",
+            "title": "订单列表"
+          },
+          {
+            "children": [],
+            "id": "menu_device_category",
+            "note": "菜单-订单管理-设备类型列表",
+            "title": "设备类型列表"
+          }
+        ],
+        "id": "menu_order_management",
+        "note": "菜单-订单管理",
+        "title": "订单管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "menu_system_template",
+            "note": "菜单-配置管理-装机配置",
+            "title": "装机配置"
+          },
+          {
+            "children": [],
+            "id": "menu_hardware_template",
+            "note": "菜单-配置管理-硬件配置",
+            "title": "硬件配置"
+          }
+        ],
+        "id": "menu_template_management",
+        "note": "菜单-配置管理",
+        "title": "配置管理"
+      },
+      {
+        "children": [],
+        "id": "menu_approval",
+        "note": "菜单-审批管理",
+        "title": "审批管理"
+      },
+      {
+        "children": [],
+        "id": "menu_task_management",
+        "note": "菜单-任务管理",
+        "title": "任务管理"
+      },
+      {
+        "children": [
+          {
+            "children": [],
+            "id": "menu_audit_api",
+            "note": "菜单-操作审计-接口调用记录",
+            "title": "接口调用记录"
+          },
+          {
+            "children": [],
+            "id": "menu_audit_log",
+            "note": "菜单-操作审计-操作记录",
+            "title": "操作记录"
+          }
+        ],
+        "id": "menu_audit",
+        "note": "菜单-操作审计",
+        "title": "操作审计"
+      },
+      {
+        "children": [],
+        "id": "menu_user_management",
+        "note": "菜单-用户管理",
+        "title": "用户管理"
+      }
+
+    ],
+    "id": "",
+    "note": "",
+    "title": "所有权限"
+  },
+  "message": "操作成功",
+  "status": "success"
+}

@@ -1,0 +1,42 @@
+
+@font-face {font-family: "iconfont-cloud-conf";
+    src: url('iconfont.eot?t=1479099177738'); /* IE9*/
+    src: url('iconfont.eot?t=1479099177738#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    /*url('iconfont.woff?t=1479099177738') format('woff'), !* chrome, firefox *!*/
+    /*url('iconfont.ttf?t=1479099177738') format('truetype'), !* chrome, firefox, opera, Safari, Android, iOS 4.2+*!*/
+    url('iconfont.svg?t=1479099177738#iconfont-cloud-conf') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont-cloud-conf {
+    font-family:"iconfont-cloud-conf" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cloud-conf-runflow:before { content: "\e60a"; }
+
+.icon-cloud-conf-stopflow:before { content: "\e60b"; }
+
+.icon-cloud-conf-stop:before { content: "\e63f"; }
+
+.icon-cloud-conf-reset:before { content: "\e63e"; }
+
+.icon-cloud-conf-stoppause:before { content: "\e64e"; }
+
+.icon-cloud-conf-retry:before { content: "\e658"; }
+
+.icon-cloud-conf-retry1:before { content: "\e65c"; }
+
+.icon-cloud-conf-suspend:before { content: "\e65d"; }
+
+.icon-cloud-conf-stop1:before { content: "\e65e"; }
+
+.icon-cloud-conf-start:before { content: "\e65f"; }
+
+.icon-cloud-conf-skip:before { content: "\e660"; }
+
+.icon-cloud-conf-recover:before { content: "\e661"; }
+

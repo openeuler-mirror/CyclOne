@@ -1,0 +1,59 @@
+/**
+ * 用户清单
+ */
+.user-list {
+	width: 730px;
+	&-selectbox {
+		margin: auto;
+		height: 500px;	
+		margin: 30px auto;
+		border: @border;
+		border-radius: 3px;
+		&__menu, &__content {
+			height: 100%;
+		}
+
+		&__menu {
+			overflow-y: auto;
+			border-right: @border;
+		}
+		&__content {
+			table {
+				width: 100%;
+				margin-bottom: 0;
+			}
+			.table-body-wrapper {
+				height: 408px;
+				overflow-y: auto;
+			}
+		}
+		.empty {
+			color: #999;
+			text-align: center;
+			margin-top: 30%;
+		}
+	}
+	&-selected {
+		h3 {
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.io-steps {
+	.io-steps-head-inner {
+		i {
+			position: relative;
+			bottom: 2px;
+			left: 1px;
+		}
+	}
+	.io-steps-status-process {
+		.io-steps-head-inner {
+			i {
+				color: white;
+			}
+		}
+	}
+}

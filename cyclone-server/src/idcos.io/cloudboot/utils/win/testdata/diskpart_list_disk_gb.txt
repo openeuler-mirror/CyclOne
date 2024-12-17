@@ -1,0 +1,11 @@
+
+Microsoft DiskPart version 6.3.9600
+
+Copyright (C) 1999-2013 Microsoft Corporation.
+On computer: WIN-C47GE2L79DO
+
+Disk 0 is now the selected disk.
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+* Disk 0    Online           25 GB      0 B         

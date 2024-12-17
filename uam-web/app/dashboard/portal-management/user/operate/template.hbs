@@ -1,0 +1,36 @@
+<div class="inner-app">
+	<div class="inner-app__context-bar context-bar">
+		{{!-- <span class="context-bar-nav-header"> --}}
+			<span class="h4 context-bar__icon" style="margin-left: 15px;">
+				{{#link-to 'dashboard.portalManagement.user'}} {{io-icon type="left"}}{{/link-to}}
+				{{#link-to 'dashboard.portalManagement.user'}}  用户管理 {{/link-to}} / <span>分配用户组</span>
+			</span>
+		{{!-- </span> --}}
+	</div>
+	<div class="inner-app__main collapsed">
+		<div class="container-fluid" style="width: 750px; margin: 30px auto 20px;">
+            <div style="margin-bottom:8px">
+				{{!-- {{#io-form-group required=false help="" label="用户组类型：" }} --}}
+				<label for="">用户组类型：</label>
+				{{#io-select value=model.groupType placeholder="默认" width=150 }} 
+					{{#each model.groupTypeTree as |queryType|}} 
+						{{#io-option value=queryType.code}}
+							{{queryType.value}}
+						{{/io-option}} 
+					{{/each}} 
+				{{/io-select}} 
+				{{!-- {{/io-form-group}} --}}
+			</div>
+			
+
+			<div class="row padding0">
+				{{io-transfer
+				dataSource=model.groupSource
+				targetValues=model.selGroups}}
+			</div>
+		</div>
+		<div class="row" style="text-align:center;">
+			<button  {{action "saveGroupAction"}} class="io-btn io-btn-primary"> {{io-icon type="save"}} 保存</button>
+		</div>
+	</div>
+</div>

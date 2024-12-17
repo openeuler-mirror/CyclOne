@@ -1,0 +1,167 @@
+.app-body-nav {
+  // flex: 0 0 @NavbarWidth;
+  height: ~"calc(100vh - 50px)";
+  // background: @NavbarBackground;
+  position: relative;
+  transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+  &::-moz-scrollbar {
+    display: none !important;
+  }
+  &::-o-scrollbar {
+    display: none !important;
+  }
+  .ant-menu-dark {
+    height: ~"calc(100vh - 50px)";
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+    &::-moz-scrollbar {
+      display: none !important;
+    }
+    &::-o-scrollbar {
+      display: none !important;
+    }
+  }
+
+  .ant-menu-inline .ant-menu-item {
+    height: 38px;
+    line-height: 38px;
+  }
+  :root .ant-menu-submenu-inline > .ant-menu-submenu-title:after {
+    font-size: 14px;
+  }
+  .ant-menu.ant-menu-dark .ant-menu-item-selected {
+    background-color: @NavSelected;
+  }
+  .menu-show-hide-btn{
+    height: 38px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 9px;
+  }
+  .app-body-nav-btn{
+    border-top: 1px solid #30589e;
+    height: 38px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 1px rgba(25,50,92,1);
+    z-index: 1;
+    // background-color: @NavbarBackground;
+    .app-body-nav-uncollapsed {
+      height: 18px;
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 9px;
+      color:#fff;
+    }
+    .app-body-nav-collapsed {
+      width: 22px;
+      height: 15px;
+      text-align: center;
+      margin: 0 auto;
+      color:#fff;
+      font-size: 12px;
+      padding-top: 8px;
+    }
+  }
+  .ant-menu-inline-collapsed .ant-menu-submenu-title .iconfont + span {
+    max-width: 0;
+    display: inline-block;
+    opacity: 0;
+  }
+  .ant-menu-inline-collapsed > .ant-menu-item .iconfont + span {
+    max-width: 0;
+    display: inline-block;
+    opacity: 0;
+  }
+  // tooltip 样式 在外面找
+  .ant-menu-inline-collapsed-tooltip .ant-tooltip-inner {
+    background-color: @NavbarHoverBackground !important;
+  }
+  .ant-menu-inline-collapsed-tooltip .ant-tooltip-inner a {
+    color: #f7fbff;
+  }
+  .ant-menu-submenu-open .ant-menu-sub .ant-menu-item {
+    background: @NavbarHoverBackground;
+  }
+  // .ant-menu-submenu-open .ant-menu-sub .ant-menu-item a {
+  //   color: @NavFont;
+  // }
+  .ant-menu-sub.ant-menu-inline .ant-menu-item-selected {
+    background: @NavSelected !important;
+  }
+  .ant-menu-dark {
+    // background: @NavbarBackground;
+    height: ~"calc(100% - 50px)";
+    .ant-menu-item a {
+      // color: @NavFont !important;
+    }
+    .ant-menu-item {
+      // color: @NavFont;
+      font-size: @NavFontSize;
+    }
+    .ant-menu-submenu-title {
+      // color: @NavFont;
+      font-size: @NavFontSize;
+    }
+    .ant-menu-submenu-inline .ant-menu-inline {
+      .ant-menu-item a {
+        color: @NavFontSub !important;
+        font-size: @NavFontSize;
+      }
+    }
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+      // background: @NavbarSubBackground;
+    }
+    .ant-menu-item .anticon + span,
+    .ant-menu-item .gongdan + span,
+    .ant-menu-submenu-title .anticon + span {
+      font-weight: 700;
+    }
+  }
+}
+.app-body-nav-uncollapsed {
+  .ant-menu-inline.ant-menu-dark > .ant-menu-item {
+    padding-left: 20px !important;
+  }
+  .ant-menu-submenu-inline > .ant-menu-inline > .ant-menu-item {
+    padding-left: 40px !important;
+  }
+  .ant-menu-inline .ant-menu-submenu-title {
+    padding-left: 20px !important;
+  }
+}
+.app-body-nav-collapsed {
+  .ant-menu-inline.ant-menu-dark > .ant-menu-item {
+    padding-left: 18px !important;
+  }
+  .ant-menu-inline .ant-menu-submenu-title {
+    // padding-left: 18px !important;
+    padding-left: 0 !important;
+    a {
+      display: block;
+      padding-left: 18px;
+      // color: @NavFont;
+    }
+    &:after {
+      content: "";
+    }
+  }
+  .ant-menu-submenu-inline .ant-menu-sub {
+    .ant-menu-item {
+      padding-left: 18px !important;
+    }
+  }
+}
