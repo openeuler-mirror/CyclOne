@@ -224,7 +224,7 @@
 # Git commit message guide
 ### 前缀
 - `Add feature`: 新增新特性/功能
-- `Mofidy feature`: 修改原有特性/功能（功能/特性上发生了变化）
+- `Modify feature`: 修改原有特性/功能（功能/特性上发生了变化）
 - `Fixbug`: bug修复
 - `Add lib`: 新增第三方库
 - `Upgrade lib`: 升级第三方库
